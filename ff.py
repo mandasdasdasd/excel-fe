@@ -52,7 +52,7 @@ class Year(Resource):
             ll.append(one[0])
         return ll
 
-class Save(Resource):
+class Add(Resource):
     def __init__(self):
         self.get_args = reqparse.RequestParser()
         self.get_args.add_argument("data",  type=str)
@@ -61,17 +61,24 @@ class Save(Resource):
 
     def get(self):
         cursor = db.cursor()
-        data = self.args["data"]
+        sdata = json.loads(self.args["data"])
         year = self.args["year"]
-        for one in json.loads(data):
-            sql = '''insert into hh (year, name, input, output, discount, number, status, people) values (%d, '%s', %d, %d, %f, %d,  '%s', '%s')''' % (int(one["year"]), one["vname"], int(one["input"]), int(one["output"]), float(one["discount"]), int(one["number"]), one["status"], one['people'])
-            cursor.execute(sql)
-            db.commit()
-        obj = HelloWorld()
-        data = obj.get(year)
-        return data
 
-class HelloWorld(Resource):
+        obj = HelloWorld()
+        data  = obj.get(year)
+        if not sdata:
+            return {"data": data, "message": "您还没有输入数据"}
+
+        try:
+            for one in sdata:
+                sql = '''insert into hh (year, name, input, output, discount, number, status, people) values (%d, '%s', %d, %d, %f, %d,  '%s', '%s')''' % (int(one["year"]), one["vname"], int(one["input"]), int(one["output"]), float(one["discount"]), int(one["number"]), one["status"], one['people'])
+                cursor.execute(sql)
+                db.commit()
+                return {"data": data, "message": "保存成功"}
+        except:
+            return {"data": data, "message": "保存失败"}
+
+class Init(Resource):
     def __init__(self):
         self.get_args = reqparse.RequestParser()
         self.get_args.add_argument("year",  type=int)
@@ -79,7 +86,6 @@ class HelloWorld(Resource):
 
     def get(self, year=2019):
         year = self.args["year"]
-        print(year)
 
         sql = '''select * from hh where year=%d''' % year
         cursor.execute(sql)
@@ -94,15 +100,15 @@ class HelloWorld(Resource):
             dd["discount"] = one[4]
             dd["profit"] = (one[3] - one[2]*one[4]) * one[5]
             dd["number"] = one[5]
-            dd["status"] = one[6]
+            dd["status"] = one[6] if one[6] !="None" else "无标记"
             dd["year"] = one[7]
             dd["people"] = one[8]
             ll.append(dd)
         return ll
 
 
-api.add_resource(HelloWorld, '/init')
-api.add_resource(Save, '/init/add')
+api.add_resource(Init, '/init')
+api.add_resource(Add, '/init/add')
 api.add_resource(Year, '/init/year')
 api.add_resource(YearSort, '/init/yearsort')
 
