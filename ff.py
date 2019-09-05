@@ -21,7 +21,7 @@ class YearSort(Resource):
         year = self.args["year"]
         obj = Init()
         res = obj.get(year)
-        return res.data
+        return res["data"]
 
 class Year(Resource):
     def get(self):
@@ -50,16 +50,16 @@ class Add(Resource):
         obj = Init()
         data  = obj.get(year)
         if not sdata:
-            return {"data": data.data, "message": "您还没有输入数据"}
+            return {"data": data["data"], "message": "您还没有输入数据"}
 
         try:
             for one in sdata:
                 sql = '''insert into hh (year, name, input, output, discount, number, status, people) values (%d, '%s', %f, %f, %f, %d,  '%s', '%s')''' % (int(one["year"]), one["vname"], float(one["input"]), float(one["output"]), float(one["discount"]), int(one["number"]), one["status"], one['people'])
                 cursor.execute(sql)
                 db.commit()
-                return {"data": data.data, "message": "保存成功"}
+                return {"data": data["data"], "message": "保存成功"}
         except:
-            return {"data": data.data, "message": "保存失败"}
+            return {"data": data["data"], "message": "保存失败"}
 
 class Init(Resource):
     def __init__(self):
@@ -87,7 +87,7 @@ class Init(Resource):
         total_page = self.total_page(pagesize)
 
         start_page = (page-1) * pagesize
-        sql = '''select * from hh where year=%d limit %d, %d''' % (year, start_page, pagesize)
+        sql = '''select * from hh where year=%d order by create_time desc limit %d, %d''' % (year, start_page, pagesize)
         cursor.execute(sql)
         res = cursor.fetchall()
         ll = []

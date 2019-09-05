@@ -22,7 +22,7 @@
           :row-class-name="rowClassName"
           :data="tableData"
           :edit-config="{trigger: 'click', mode: 'cell'}">
-          <vxe-table-column type="index" width="60"></vxe-table-column>
+          <vxe-table-column field="id" width="40"></vxe-table-column>
           <vxe-table-column field="year" title="年份"></vxe-table-column>
           <vxe-table-column field="vname" title="项目名称" sortable  :edit-render="{name: 'input'}"></vxe-table-column>
           <vxe-table-column field="people" title="人员"  sortable sortable  :edit-render="{name: 'input'}"></vxe-table-column>
@@ -80,7 +80,6 @@ import store from "./store.js"
             init () {
                 this.$http.get('/init', {params: {year: this.year, page: this.page.currentPage, pagesize: this.pageSize}}).then(response => {
                     this.tableData = response.data.data
-                    alert(response.data.total_page)
                     this.page.totalResult = response.data.total_page
                 })
             }, 
