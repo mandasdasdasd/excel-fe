@@ -59,7 +59,7 @@ import store from "./store.js"
             return {
                 page: {
                     currentPage: 1,
-                    pageSize: 10,
+                    pagesize: 15,
                     totalResult: 200
                 },
                 tableData: [],
@@ -78,7 +78,7 @@ import store from "./store.js"
 
         methods: {
             init () {
-                this.$http.get('/init', {params: {year: this.year, page: this.page.currentPage, pagesize: this.pageSize}}).then(response => {
+                this.$http.get('/init', {params: {year: this.year, page: this.page.currentPage, pagesize: this.page.pagesize}}).then(response => {
                     this.tableData = response.data.data
                     this.page.totalResult = response.data.total_page
                 })

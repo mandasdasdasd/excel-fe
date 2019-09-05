@@ -70,14 +70,11 @@ class Init(Resource):
         self.args = self.get_args.parse_args()
 
     def total_page(self, offset):
-        
+        print(offset) 
         sql = '''select count(id) from hh'''
         cursor.execute(sql)
         number = cursor.fetchone()
-        if not number[0] % offset:
-            return number[0]
-        else:
-            return number[0]+1
+        return number[0]
 
     def get(self, year=2019):
         year = self.args["year"]
