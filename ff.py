@@ -64,7 +64,7 @@ class Add(Resource):
         sdata = json.loads(self.args["data"])
         year = self.args["year"]
 
-        obj = HelloWorld()
+        obj = Init()
         data  = obj.get(year)
         if not sdata:
             return {"data": data, "message": "您还没有输入数据"}

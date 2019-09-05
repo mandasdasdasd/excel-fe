@@ -25,12 +25,12 @@
           <vxe-table-column type="index" width="60"></vxe-table-column>
           <vxe-table-column field="year" title="年份"></vxe-table-column>
           <vxe-table-column field="vname" title="项目名称" sortable  :edit-render="{name: 'input'}"></vxe-table-column>
-          <vxe-table-column field="people" title="人员" sortable  :edit-render="{name: 'input'}"></vxe-table-column>
-          <vxe-table-column field="input" title="进价"  :edit-render="{name: 'input'}"></vxe-table-column>
-          <vxe-table-column field="output" title="卖价" :edit-render="{name: 'input'}"></vxe-table-column>
+          <vxe-table-column field="people" title="人员"  sortable sortable  :edit-render="{name: 'input'}"></vxe-table-column>
+          <vxe-table-column field="input" title="进价"   :edit-render="{name: 'input'}"></vxe-table-column>
+          <vxe-table-column field="output" title="卖价"  :edit-render="{name: 'input'}"></vxe-table-column>
           <vxe-table-column field="discount" title="折扣" :edit-render="{name: 'input'}"></vxe-table-column>
-          <vxe-table-column field="profit" title="利润"></vxe-table-column>
-          <vxe-table-column field="number" title="数量" :edit-render="{name: 'input'}"></vxe-table-column>
+          <vxe-table-column field="profit" title="利润" sortable ></vxe-table-column>
+          <vxe-table-column field="number" title="数量"  sortable :edit-render="{name: 'input'}"></vxe-table-column>
           <vxe-table-column field="status" title="状态" sortable :edit-render="{name: 'input'}"></vxe-table-column>
         </vxe-table>
 
@@ -72,7 +72,8 @@ import store from "./store.js"
 
             insertEvent (row) {
               let record = {
-                year: this.year
+                year: this.year,
+                profit: "不可编辑"
               }
               this.$refs.xTable.insertAt(record, row)
                 .then(({ row }) => this.$refs.xTable.setActiveCell(row, 'year'))
@@ -91,13 +92,12 @@ import store from "./store.js"
             },
 
             getInsertEvent () {
-               alert()
               let insertRecords = this.$refs.xTable.getInsertRecords()
                  this.$http.get('/init/add', {params: {data: JSON.stringify(insertRecords), year: this.year}}).then(response => {
-                    this.tableData = response.data
+                    alert(response.data.message)
+                    this.tableData.data = response.data.data
                 })
             }
-
           }
         }
 </script>
