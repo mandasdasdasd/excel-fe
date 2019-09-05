@@ -2,7 +2,7 @@
     <div>
         <vxe-toolbar>
           <template v-slot:buttons>
-            <vxe-button @click="getInsertEvent">保存</vxe-button>
+            <vxe-button @click="getInsertEvent()">保存</vxe-button>
             <vxe-button @click="insertEvent(-1)">新增</vxe-button>
              <vxe-button>
               <template>{{year}}</template>
@@ -29,10 +29,22 @@
           <vxe-table-column field="input" title="进价"   :edit-render="{name: 'input'}"></vxe-table-column>
           <vxe-table-column field="output" title="卖价"  :edit-render="{name: 'input'}"></vxe-table-column>
           <vxe-table-column field="discount" title="折扣" :edit-render="{name: 'input'}"></vxe-table-column>
-          <vxe-table-column field="profit" title="利润" sortable ></vxe-table-column>
           <vxe-table-column field="number" title="数量"  sortable :edit-render="{name: 'input'}"></vxe-table-column>
+          <vxe-table-column field="profit" title="利润" sortable ></vxe-table-column>
           <vxe-table-column field="status" title="状态" sortable :edit-render="{name: 'input'}"></vxe-table-column>
+          <vxe-table-column field="createtime" title="创建时间"  sortable ></vxe-table-column>
         </vxe-table>
+
+
+          <vxe-pager
+          align="center"
+          :current-page.sync="page.currentPage"
+          :page-size.sync="page.pageSize"
+          :total="page.totalResult"
+          :layouts="['JumpNumber']"
+          @page-change="handlePageChange"
+          >
+        </vxe-pager>    
 
         </div>
 </template>
@@ -43,25 +55,40 @@
 import store from "./store.js"
 
      export default {
-          data () {
+        data () {
             return {
-              tableData: [],
-              year: sessionStorage.getItem('year'),
-              years: []
+                page: {
+                    currentPage: 1,
+                    pageSize: 10,
+                    totalResult: 200
+                },
+                tableData: [],
+                year: sessionStorage.getItem('year'),
+                years: []
             }
           },
 
         mounted: function () {   //页面初始化方法
-           this.$http.get('/init', {params: {year: this.year}}).then(response => {
-                this.tableData = response.data
-            }),
+            this.init(),
             this.$http.get('/init/year').then(response => {
                 this.years = response.data;
             })
 
         },
 
-          methods: {
+        methods: {
+            init () {
+                this.$http.get('/init', {params: {year: this.year, page: this.page.currentPage, pagesize: this.pageSize}}).then(response => {
+                    this.tableData = response.data.data
+                    alert(response.data.total_page)
+                    this.page.totalResult = response.data.total_page
+                })
+            }, 
+
+            handlePageChange () {
+                this.init()
+            },
+
             xyear (item) {
                 this.year = item
                 sessionStorage.setItem('year', item)
@@ -73,7 +100,8 @@ import store from "./store.js"
             insertEvent (row) {
               let record = {
                 year: this.year,
-                profit: "不可编辑"
+                profit: "不可编辑",
+                createtime: "不可编辑"
               }
               this.$refs.xTable.insertAt(record, row)
                 .then(({ row }) => this.$refs.xTable.setActiveCell(row, 'year'))
