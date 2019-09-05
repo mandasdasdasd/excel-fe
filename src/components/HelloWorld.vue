@@ -35,7 +35,6 @@
           <vxe-table-column field="createtime" title="创建时间"  sortable ></vxe-table-column>
         </vxe-table>
 
-
           <vxe-pager
           align="center"
           :current-page.sync="page.currentPage"
@@ -59,8 +58,8 @@ import store from "./store.js"
             return {
                 page: {
                     currentPage: 1,
-                    pagesize: 15,
-                    totalResult: 200
+                    pageSize: 15,
+                    totalResult: 50
                 },
                 tableData: [],
                 year: sessionStorage.getItem('year'),
@@ -78,7 +77,7 @@ import store from "./store.js"
 
         methods: {
             init () {
-                this.$http.get('/init', {params: {year: this.year, page: this.page.currentPage, pagesize: this.page.pagesize}}).then(response => {
+                this.$http.get('/init', {params: {year: this.year, page: this.page.currentPage, pageSize: this.page.pageSize}}).then(response => {
                     this.tableData = response.data.data
                     this.page.totalResult = response.data.total_page
                 })
