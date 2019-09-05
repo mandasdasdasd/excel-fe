@@ -19,26 +19,9 @@ class YearSort(Resource):
 
     def get(self):
         year = self.args["year"]
-        db = pymysql.connect("159.226.193.219","mysql","mysql","ysman" )
-        acursor = db.cursor()
-        sql = '''select * from hh where year=%d''' % year
-        acursor.execute(sql)
-        res = acursor.fetchall()
-        ll = []
-        for one in res:
-            dd = {}
-            dd["id"] = one[0]
-            dd["vname"] = one[1]
-            dd["input"] = one[2]
-            dd["output"] = one[3]
-            dd["discount"] = one[4]
-            dd["profit"] = (one[3] - one[2]*one[4]) * one[5]
-            dd["number"] = one[5]
-            dd["status"] = one[6]
-            dd["year"] = one[7]
-            dd["people"] = one[8]
-            ll.append(dd)
-        return ll
+        obj = Init()
+        res = obj.get(year)
+        return res
 
 class Year(Resource):
     def get(self):
