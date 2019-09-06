@@ -1,5 +1,6 @@
 <template>
     <div>
+        <headd></headd>
         <vxe-toolbar>
           <template v-slot:buttons>
             <vxe-button @click="getInsertEvent()">保存</vxe-button>
@@ -49,8 +50,8 @@
 </template>
 
 
-
 <script>
+import headd from '@/components/head'
 import store from "./store.js"
 
      export default {
@@ -67,6 +68,10 @@ import store from "./store.js"
             }
           },
 
+        
+        components: {
+            headd
+        },
         mounted: function () {   //页面初始化方法
             this.init(),
             this.$http.get('/init/year').then(response => {
