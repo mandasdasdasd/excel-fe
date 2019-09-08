@@ -22,10 +22,12 @@
           :cell-class-name="cellClassName"
           :row-class-name="rowClassName"
           :data="tableData"
+          @cell-dblclick='insertevent'
           :edit-config="{trigger: 'click', mode: 'cell'}">
-          <vxe-table-column field="id" width="40"></vxe-table-column>
+          <vxe-table-column field="id" width="40" title="id"></vxe-table-column>
           <vxe-table-column field="project_time" title="立项时间" sortable  :edit-render="{name: 'input'}"></vxe-table-column>
-          <vxe-table-column field="project_number" title="编号"   :edit-render="{name: 'input'}"></vxe-table-column>
+          <vxe-table-column field="project_number" title="编号" :edit-render="{name: 'input'}">
+            </vxe-table-column>
           <vxe-table-column field="area" title="区域"  :edit-render="{name: 'input'}"></vxe-table-column>
           <vxe-table-column field="billing_information" title="开票信息" :edit-render="{name: 'input'}"></vxe-table-column>
           <vxe-table-column field="contact" title="联系人"  sortable :edit-render="{name: 'input'}"></vxe-table-column>
@@ -82,7 +84,8 @@ import store from "./store.js"
                 },
                 tableData: [],
                 year: sessionStorage.getItem('year'),
-                years: []
+                years: [],
+                pnumber: ''
             }
           },
 
@@ -99,6 +102,9 @@ import store from "./store.js"
         },
 
         methods: {
+            al ({row}, event) {
+                this.pnumber = row.project_number
+            },
             init () {
                 this.$http.get('/init', {params: {year: this.year, page: this.page.currentPage, pageSize: this.page.pageSize}}).then(response => {
                     this.tableData = response.data.data
@@ -118,18 +124,39 @@ import store from "./store.js"
                 })
             },
 
-            insertEvent (row) {
+            insertEvent (row, event) {
               let record = {
                 year: this.year,
                 profit: "不可编辑",
                 create_time: "不可编辑",
                 total_price: "不可编辑",
                 sell_total_price: "不可编辑",
-                price_after_tax: "不可编辑"
+                price_after_tax: "不可编辑",
               }
               this.$refs.xTable.insertAt(record, row)
                 .then(({ row }) => this.$refs.xTable.setActiveCell(row, 'year'))
             },
+
+
+
+
+            insertevent ({row}, event) {
+              let record = {
+                profit: "不可编辑",
+                create_time: "不可编辑",
+                total_price: "不可编辑",
+                sell_total_price: "不可编辑",
+                price_after_tax: "不可编辑",
+                project_number: row.project_number
+              }
+              this.$refs.xTable.insertAt(record, row)
+                .then(({ row }) => this.$refs.xTable.setActiveCell(row, 'year'))
+            },
+
+
+
+
+
 
             rowClassName ({ row, rowIndex}) {
                 if (row.status === "完成") {

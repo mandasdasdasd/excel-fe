@@ -110,14 +110,14 @@ class Init(Resource):
             dd["supplier"] = one[10]
             dd["purchase_number"] = one[11]
             dd["original_price"] = one[12]
-            dd["discount"] = one[13]
+            dd["discount"] = one[13] + "%"
             dd["total_price"] = one[11] * abs(one[12]) * float(one[13]) / 100
 
             dd["sell_number"] = one[14]
             dd["sell_price"] = one[15]
             dd["sell_total_price"] = one[14] * one[15]
 
-            dd["tax"] = one[16]
+            dd["tax"] = one[16] + "%"
             dd["other_price"] = one[18]
             dd["price_after_tax"] =dd["sell_total_price"]  * int(one[16]) / 100
 
