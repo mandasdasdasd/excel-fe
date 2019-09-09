@@ -79,7 +79,7 @@ import store from "./store.js"
             return {
                 page: {
                     currentPage: 1,
-                    pageSize: 10,
+                    pageSize: 8,
                     totalResult: 50
                 },
                 tableData: [],
@@ -94,6 +94,16 @@ import store from "./store.js"
             headd
         },
         mounted: function () {   //页面初始化方法
+            const exp= sessionStorage.getItem('year')
+            if (!exp && typeof exp!="undefined" && exp!=0) {
+                console.log(this.year)
+                console.log(typeof(this.year))
+                this.year=2019
+                } else {
+                console.log(this.year)
+                console.log(typeof(this.year))
+                console.log (false)
+                }
             this.init(),
             this.$http.get('/init/year').then(response => {
                 this.years = response.data;
@@ -138,8 +148,6 @@ import store from "./store.js"
             },
 
 
-
-
             insertevent ({row}, event) {
               let record = {
                 profit: "不可编辑",
@@ -152,10 +160,6 @@ import store from "./store.js"
               this.$refs.xTable.insertAt(record, row)
                 .then(({ row }) => this.$refs.xTable.setActiveCell(row, 'year'))
             },
-
-
-
-
 
 
             rowClassName ({ row, rowIndex}) {
