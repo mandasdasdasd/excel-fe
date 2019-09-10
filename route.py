@@ -3,7 +3,10 @@ from flask_restful import Resource, Api, reqparse
 
 import pymysql
 import json
- 
+import MySQLdb
+
+from user import User
+
 db = pymysql.connect("159.226.193.219","mysql","mysql","ysman" )
 cursor =db. cursor()
 #data = cursor.fetchone()
@@ -39,6 +42,38 @@ class Year(Resource):
             ll.append(one[0])
         return ll
 
+
+class Update(Resource):
+    def __init__(self):
+        self.db = pymysql.connect("159.226.193.219","mysql","mysql","ysman" )
+        self.cursor = self.db.cursor()
+        self.get_args = reqparse.RequestParser()
+        self.get_args.add_argument("year",  type=int)
+        self.get_args.add_argument("page",  type=int, default=1)
+        self.get_args.add_argument("pageSize",  type=int, default=10)
+        self.get_args.add_argument("data",  type=str)
+        self.args = self.get_args.parse_args()
+
+    def get(self):
+        sdata = json.loads(self.args["data"])
+        year = self.args["year"]
+
+        obj = Init()
+        data  = obj.get(year)
+        if not sdata:
+            return {"data": data["data"], "message": "您还没有输入数据"}
+
+        #sql = '''update project set project_time="%s", project_number="%s" area="%s", billing_information="%s", contact="%s", tele="%s", project_sort="%s", order_content="%s", norm="%s", supplier="%s", purchase_number=%d, original_price=%d, discount="%s", sell_number=%d, sell_price=%d,  tax="%s", other_price=%d, profit="%s", billing="%s", back_money="%s", billing_money="%s", task_man="%s", exe_man="%s", common="%s", year=%d) ''' % ( MySQLdb.escape_string(sdata["project_time"]), MySQLdb.escape_string(sdata["project_number"]), MySQLdb.escape_string(sdata["area"]), MySQLdb.escape_string(sdata["billing_information"]), MySQLdb.escape_string(sdata["contact"]), MySQLdb.escape_string(sdata["tele"]), MySQLdb.escape_string(sdata["project_sort"]), MySQLdb.escape_string(sdata['order_content']), MySQLdb.escape_string(sdata["norm"]), MySQLdb.escape_string(sdata["supplier"]), int(sdata["purchase_number"]), int(sdata["original_price"]), MySQLdb.escape_string(sdata["discount"]), int(sdata["sell_number"]), int(sdata["sell_price"]), MySQLdb.escape_string(sdata["tax"]), int(sdata["other_price"]), MySQLdb.escape_string(sdata["profit"]), MySQLdb.escape_string(sdata["billing"]), MySQLdb.escape_string(sdata["back_money"]), MySQLdb.escape_string(sdata["billing_money"]), MySQLdb.escape_string(sdata["task_man"]), MySQLdb.escape_string(sdata["exe_man"]), MySQLdb.escape_string(sdata["common"]), year)
+
+        sql = '''update project set project_time="%s") ''' % MySQLdb.escape_string(sdata["project_time"])
+        print(sql)
+        self.cursor.execute(sql)
+        self.db.commit()
+        return {"data": data["data"], "message": "保存成功"}
+        #except:
+        #return {"data": data["data"], "message": "保存失败"}
+
+
 class Add(Resource):
     def __init__(self):
         self.db = pymysql.connect("159.226.193.219","mysql","mysql","ysman" )
@@ -58,13 +93,13 @@ class Add(Resource):
             return {"data": data["data"], "message": "您还没有输入数据"}
 
         for one in sdata:
-            print(one)
             sql = '''insert into project (project_time, project_number, area, billing_information, contact, tele, project_sort, order_content, norm, supplier, purchase_number, original_price, discount, sell_number, sell_price,  tax, other_price, profit, billing, back_money, billing_money, task_man, exe_man, common, year) values ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', %d,%d, '%s', %d, %d, '%s', %d, '%s', '%s', '%s', '%s', '%s', '%s', '%s', %d )''' % (one["project_time"], one["project_number"], one["area"], one["billing_information"], one["contact"], one["tele"], one["project_sort"], one['order_content'], one["norm"], one["supplier"], int(one["purchase_number"]), int(one["original_price"]), one["discount"], int(one["sell_number"]), int(one["sell_price"]), one["tax"], int(one["other_price"]), one["profit"], one["billing"], one["back_money"], one["billing_money"], one["task_man"], one["exe_man"], one["common"], year)
             self.cursor.execute(sql)
             self.db.commit()
             return {"data": data["data"], "message": "保存成功"}
             #except:
             #    return {"data": data["data"], "message": "保存失败"}
+
 
 class Init(Resource):
     def __init__(self):
@@ -84,14 +119,12 @@ class Init(Resource):
 
     def get(self, year=2019):
         year = self.args["year"]
-        print(year)
         page = self.args["page"]
         pagesize = self.args["pageSize"]
         total_page = self.total_page(pagesize)
 
         start_page = (page-1) * pagesize
         sql = '''select * from project where year=%d order by project_number desc limit %d, %d''' % (year, start_page, pagesize)
-        print(sql)
         self.cursor.execute(sql)
         res = self.cursor.fetchall()
         ll = []
@@ -138,7 +171,9 @@ class Init(Resource):
 
 api.add_resource(Init, '/init')
 api.add_resource(Add, '/init/add')
+api.add_resource(Update, '/init/update')
 api.add_resource(Year, '/init/year')
+api.add_resource(User, '/init/login')
 api.add_resource(YearSort, '/init/yearsort')
 
 if __name__ == '__main__':

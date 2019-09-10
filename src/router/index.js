@@ -10,18 +10,15 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
+      component: login
+    },
+    {
+      path: '/list',
       component: HelloWorld
     },
     {
       path: '/login',
-      name: 'HelloWorld',
-      component: b
-    },
-    {
-      path: '/head',
-      name: 'HelloWorld',
-      component: head
+      component: login
     }
   ]
 })

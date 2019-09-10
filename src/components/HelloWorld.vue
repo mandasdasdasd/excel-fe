@@ -49,11 +49,11 @@
           <vxe-table-column field="profit" title="利润" sortable ></vxe-table-column>
           <vxe-table-column field="billing" title="发票" sortable :edit-render="{name: 'input'}"></vxe-table-column>
           <vxe-table-column field="back_money" title="回款" sortable :edit-render="{name: 'input'}"></vxe-table-column>
-          <vxe-table-column field="billing_money" title="支票现金" sortable :edit-render="{name: 'select', type: 'visible', options: moneyList}"></vxe-table-column>
+          <vxe-table-column field="billing_money" title="支票现金" sortable :edit-render="{name: 'input'}"></vxe-table-column>
           <vxe-table-column field="task_man" title="业务员" sortable :edit-render="{name: 'input'}"></vxe-table-column>
           <vxe-table-column field="exe_man" title="执行人员" sortable :edit-render="{name: 'input'}"></vxe-table-column>
           <vxe-table-column field="common" title="备注" sortable :edit-render="{name: 'input'}"></vxe-table-column>
-          <vxe-table-column field="create_time" title="创建时间" sortable :edit-render="{name: 'input'}"></vxe-table-column>
+          <vxe-table-column field="create_time" title="创建时间" sortable></vxe-table-column>
         </vxe-table>
 
           <vxe-pager
@@ -66,6 +66,14 @@
           >
         </vxe-pager>    
 
+        <vxe-modal
+            :height=100
+            :width=100
+            :message="123123"
+        >
+           sadad 
+        </vxe-modal>
+
         </div>
 </template>
 
@@ -77,16 +85,6 @@ import store from "./store.js"
      export default {
         data () {
             return {
-               moneyList: [
-                    {
-                'label': '支票',
-                'value': '1'
-                    },
-                    {
-                'label': '现金',
-                'value': '0'
-                    }
-                ],
                 page: {
                     currentPage: 1,
                     pageSize: 8,

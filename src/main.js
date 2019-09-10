@@ -9,7 +9,11 @@ import VXETable from 'vxe-table'
 import 'vxe-table/lib/index.css'
 
 
+import VXETablePluginElement from 'vxe-table-plugin-element'
+import 'vxe-table-plugin-element/dist/style.css'
 Vue.use(VXETable)
+VXETable.use(VXETablePluginElement)
+
 import  axios  from 'axios'
 Vue.prototype.$http = axios
 

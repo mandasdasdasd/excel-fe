@@ -7,14 +7,14 @@
 	<div class="form-group">
 		<label for="firstname" class="col-sm-2 control-label">用户名</label>
 		<div class="col-sm-10">
-			<input type="text" class="form-control" id="firstname" 
+			<input type="text" class="form-control" id="firstname"  ref="user"
 				   placeholder="请输入用户名">
 		</div>
 	</div>
 	<div class="form-group">
 		<label for="lastname" class="col-sm-2 control-label">密码</label>
 		<div class="col-sm-10">
-			<input type="text" class="form-control" id="lastname" 
+			<input type="password" class="form-control" id="lastname" ref="pwd" 
 				   placeholder="请输入密码">
 		</div>
 	</div>
@@ -29,7 +29,7 @@
 	</div>
 	<div class="form-group">
 		<div class="col-sm-offset-2 col-sm-10">
-			<button type="submit" class="btn btn-default">登录</button>
+			<button @click="login()" @click.prevent="handleSubmit" class="btn btn-default">登录</button>
 		</div>
 	</div>
 </form>
@@ -38,3 +38,29 @@
 </div>
 </div>
 </template>
+
+<script>
+     export default {
+        data () {
+            return {
+            }
+          },
+       methods: {
+            login () {
+                this.$http.get('/init/login', {params: {user: this.$refs.user.value, pwd: this.$refs.pwd.value}}).then(response => {
+                if (response.data === 1) {
+                    alert("登陆成功")
+                        this.$router.push({  //核心语句
+                            path:'/list',   //跳转的路径
+                            query:{           //路由传参时push和query搭配使用 ，作用时传递参数
+                                id:this.id ,
+                            }
+                         })
+                    } else {
+                    alert("登陆失败")
+                    }
+                })
+            },
+        }
+        }
+</script>
