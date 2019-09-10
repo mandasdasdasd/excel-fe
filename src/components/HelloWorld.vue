@@ -124,6 +124,17 @@ import store from "./store.js"
                 this.pnumber = row.project_number
             },
             init () {
+                const login_status = this.$cookies.get("login")
+                if (login_status) {
+                    } else {
+                        this.$router.push({  //核心语句
+                            path:'/login',   //跳转的路径
+                            query:{           //路由传参时push和query搭配使用 ，作用时传递参数
+                                id:this.id ,
+                            }
+                         })
+                    }
+
                 this.$http.get('/init', {params: {year: this.year, page: this.page.currentPage, pageSize: this.page.pageSize}}).then(response => {
                     this.tableData = response.data.data
                     this.page.totalResult = response.data.total_page
