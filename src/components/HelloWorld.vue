@@ -125,8 +125,9 @@ import store from "./store.js"
             },
             init () {
                 const role = this.$cookies.get("role")
-                if (role === "1") {
+                if (role === "1" || role === "11") {
                     } else {
+                    alert(233333333333333)
                         this.$router.push({  //核心语句
                             path:'/login',   //跳转的路径
                             query:{           //路由传参时push和query搭配使用 ，作用时传递参数
