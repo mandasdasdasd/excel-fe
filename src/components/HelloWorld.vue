@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="container-fluid">
         <headd></headd>
         <vxe-toolbar style="margin-top:20px">
           <template v-slot:buttons>

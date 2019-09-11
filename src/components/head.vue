@@ -1,6 +1,5 @@
 <template >
-<div class="container-fluid" style="background-color:#f5f5f5; margin:0;padding:0">
-    <div class="row">
+    <div class="row" style="background-color:#f5f5f5">
         <div class="col-md-12" style="height:50px">
             <div class="col-md-11" style="padding-top:11px">
                <span style="font-size:22px"><strong>才华有限公司</strong></span>
@@ -13,7 +12,6 @@
             </div>
         </div>
     </div>
-
 </template>
 <script>
      export default {
