@@ -26,7 +26,8 @@ class User(Resource):
         res = cursor.fetchall()
         if res:
             resp=Response("1")
-            resp.set_cookie("login", "true")
+            resp.set_cookie("role", str(res[0][4]))
+            resp.set_cookie("name", str(res[0][1]))
             return resp
         else:
             return 0

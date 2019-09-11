@@ -1,7 +1,7 @@
 <template>
     <div>
         <headd></headd>
-        <vxe-toolbar>
+        <vxe-toolbar style="margin-top:20px">
           <template v-slot:buttons>
             <vxe-button @click="getInsertEvent()">保存</vxe-button>
             <vxe-button @click="insertEvent()">新增</vxe-button>
@@ -124,8 +124,8 @@ import store from "./store.js"
                 this.pnumber = row.project_number
             },
             init () {
-                const login_status = this.$cookies.get("login")
-                if (login_status) {
+                const role = this.$cookies.get("role")
+                if (role === "1") {
                     } else {
                         this.$router.push({  //核心语句
                             path:'/login',   //跳转的路径
