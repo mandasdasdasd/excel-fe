@@ -22,12 +22,14 @@
           :cell-class-name="cellClassName"
           :row-class-name="rowClassName"
           :data="tableData"
+          :edit-render={}
+
           @cell-dblclick='insertevent'
-          :edit-config="{trigger: 'click', mode: 'cell'}">
+          :edit-config="{trigger: 'click', mode: 'row'}">
+
           <vxe-table-column field="id" width="40" title="id"></vxe-table-column>
           <vxe-table-column field="project_time" title="立项时间" sortable  :edit-render="{name: 'input'}"></vxe-table-column>
-          <vxe-table-column field="project_number" title="编号" :edit-render="{name: 'input'}">
-            </vxe-table-column>
+          <vxe-table-column field="project_number" title="编号" :edit-render="{name: 'input'}"></vxe-table-column>
           <vxe-table-column field="area" title="区域"  :edit-render="{name: 'input'}"></vxe-table-column>
           <vxe-table-column field="billing_information" title="开票信息" :edit-render="{name: 'input'}"></vxe-table-column>
           <vxe-table-column field="contact" title="联系人"  sortable :edit-render="{name: 'input'}"></vxe-table-column>
@@ -46,7 +48,7 @@
           <vxe-table-column field="tax" title="税率（%）" sortable :edit-render="{name: 'input'}"></vxe-table-column>
           <vxe-table-column field="price_after_tax" title="税后价" sortable></vxe-table-column>
           <vxe-table-column field="other_price" title="其他费用" sortable :edit-render="{name: 'input'}"></vxe-table-column>
-          <vxe-table-column field="profit" title="利润" sortable ></vxe-table-column>
+          <vxe-table-column v-if="role_sale" field="profit" title="利润" sortable ></vxe-table-column>
           <vxe-table-column field="billing" title="发票" sortable :edit-render="{name: 'input'}"></vxe-table-column>
           <vxe-table-column field="back_money" title="回款" sortable :edit-render="{name: 'input'}"></vxe-table-column>
           <vxe-table-column field="billing_money" title="支票现金" sortable :edit-render="{name: 'input'}"></vxe-table-column>
@@ -54,7 +56,17 @@
           <vxe-table-column field="exe_man" title="执行人员" sortable :edit-render="{name: 'input'}"></vxe-table-column>
           <vxe-table-column field="common" title="备注" sortable :edit-render="{name: 'input'}"></vxe-table-column>
           <vxe-table-column field="create_time" title="创建时间" sortable></vxe-table-column>
-        </vxe-table>
+          <vxe-table-column title="操作">
+            <template v-slot="{ row }">
+              <template v-if="$refs.xTable.hasActiveRow(row)">
+                <vxe-button @click="saveRowEvent(row)">保存</vxe-button>
+                <vxe-button @click="cancelRowEvent(row)">取消</vxe-button>
+              </template>
+              <template v-else>
+                <vxe-button @click="editRowEvent(row)">编辑</vxe-button>
+              </template>
+            </template>
+          </vxe-table-column>
 
           <vxe-pager
           align="center"
@@ -85,6 +97,7 @@ import store from "./store.js"
      export default {
         data () {
             return {
+                role_sale: true,
                 page: {
                     currentPage: 1,
                     pageSize: 8,
@@ -96,38 +109,43 @@ import store from "./store.js"
                 pnumber: ''
             }
           },
-
-        
         components: {
             headd
         },
         mounted: function () {   //页面初始化方法
             const exp= sessionStorage.getItem('year')
             if (!exp && typeof exp!="undefined" && exp!=0) {
-                console.log(this.year)
-                console.log(typeof(this.year))
                 this.year=2019
                 } else {
-                console.log(this.year)
-                console.log(typeof(this.year))
-                console.log (false)
                 }
             this.init(),
             this.$http.get('/init/year').then(response => {
                 this.years = response.data;
             })
-
         },
 
         methods: {
-            al ({row}, event) {
-                this.pnumber = row.project_number
+            al () {
+                alert(12)
+            },
+            editRowEvent (row) {
+              this.$refs.xTable.setActiveRow(row)
+            },
+            saveRowEvent (row) {
+                console.log(row)
+              this.$XModal.alert("success")
+              this.cancelRowEvent()
+            },
+            cancelRowEvent (row) {
+              this.$refs.xTable.clearActived()
             },
             init () {
                 const role = this.$cookies.get("role")
+                if (role === "11") {
+                    this.role_sale = false
+                }; 
                 if (role === "1" || role === "11") {
                     } else {
-                    alert(233333333333333)
                         this.$router.push({  //核心语句
                             path:'/login',   //跳转的路径
                             query:{           //路由传参时push和query搭配使用 ，作用时传递参数
@@ -156,7 +174,7 @@ import store from "./store.js"
 
             insertEvent (row, event) {
               let record = {
-                year: this.year,
+                year:this.year,
                 profit: "不可编辑",
                 create_time: "不可编辑",
                 total_price: "不可编辑",
@@ -198,6 +216,7 @@ import store from "./store.js"
 
             getInsertEvent () {
               let insertRecords = this.$refs.xTable.getInsertRecords()
+           console.log(insertRecords)
                  this.$http.get('/init/add', {params: {data: JSON.stringify(insertRecords), year: this.year}}).then(response => {
                     alert(response.data.message)
                     this.tableData.data = response.data.data
