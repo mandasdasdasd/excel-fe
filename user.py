@@ -22,13 +22,13 @@ class User(Resource):
         pwd = self.args["pwd"]
 
         sql = '''select * from user where user ="%s" and pwd="%s" and status=1 ''' % (user, pwd)
-        print(sql)
         cursor.execute(sql)
         res = cursor.fetchall()
         if res:
             resp=Response("1")
+            name = res[0][1]
             resp.set_cookie("role", str(res[0][5]))
-            resp.set_cookie("name", str(res[0][1]))
+            resp.set_cookie("user", name)
             return resp
         else:
             return 0

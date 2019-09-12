@@ -50,7 +50,7 @@ class Update(Resource):
         self.get_args = reqparse.RequestParser()
         self.get_args.add_argument("year",  type=int)
         self.get_args.add_argument("page",  type=int, default=1)
-        self.get_args.add_argument("pageSize",  type=int, default=10)
+        self.get_args.add_argument("pageSize", type=int, default=10)
         self.get_args.add_argument("data",  type=str)
         self.args = self.get_args.parse_args()
 
@@ -62,10 +62,8 @@ class Update(Resource):
         data  = obj.get(year)
         if not sdata:
             return {"data": data["data"], "message": "您还没有输入数据"}
-
-        #sql = '''update project set project_time="%s", project_number="%s" area="%s", billing_information="%s", contact="%s", tele="%s", project_sort="%s", order_content="%s", norm="%s", supplier="%s", purchase_number=%d, original_price=%d, discount="%s", sell_number=%d, sell_price=%d,  tax="%s", other_price=%d, profit="%s", billing="%s", back_money="%s", billing_money="%s", task_man="%s", exe_man="%s", common="%s", year=%d) ''' % ( MySQLdb.escape_string(sdata["project_time"]), MySQLdb.escape_string(sdata["project_number"]), MySQLdb.escape_string(sdata["area"]), MySQLdb.escape_string(sdata["billing_information"]), MySQLdb.escape_string(sdata["contact"]), MySQLdb.escape_string(sdata["tele"]), MySQLdb.escape_string(sdata["project_sort"]), MySQLdb.escape_string(sdata['order_content']), MySQLdb.escape_string(sdata["norm"]), MySQLdb.escape_string(sdata["supplier"]), int(sdata["purchase_number"]), int(sdata["original_price"]), MySQLdb.escape_string(sdata["discount"]), int(sdata["sell_number"]), int(sdata["sell_price"]), MySQLdb.escape_string(sdata["tax"]), int(sdata["other_price"]), MySQLdb.escape_string(sdata["profit"]), MySQLdb.escape_string(sdata["billing"]), MySQLdb.escape_string(sdata["back_money"]), MySQLdb.escape_string(sdata["billing_money"]), MySQLdb.escape_string(sdata["task_man"]), MySQLdb.escape_string(sdata["exe_man"]), MySQLdb.escape_string(sdata["common"]), year)
-
-        sql = '''update project set project_time="%s") ''' % MySQLdb.escape_string(sdata["project_time"])
+    
+        sql = '''update project set project_time="%s" and project_number="%s" and area="%s" and billing_information="%s" and contact="%s" and tele="%s" and project_sort="%s" and order_content="%s" and norm="%s" and supplier="%s" and purchase_number=%d and original_price=%d and discount="%s" and sell_number=%d and sell_price=%d and tax="%s" and other_price=%d and profit="%s" and billing="%s" and back_money="%s" and billing_money="%s" and task_man="%s" and exe_man="%s" and common="%s" and year=%d where id="%d" ''' % (sdata["project_time"], sdata["project_number"], sdata["area"], sdata["billing_information"], sdata["contact"], sdata["tele"],sdata["project_sort"], sdata['order_content'], sdata["norm"], sdata["supplier"], int(sdata["purchase_number"]), int(sdata["original_price"]), sdata["discount"], int(sdata["sell_number"]), int(sdata["sell_price"]), sdata["tax"], int(sdata["other_price"]), sdata["profit"], sdata["billing"], sdata["back_money"], sdata["billing_money"], sdata["task_man"], sdata["exe_man"], sdata["common"], year, int(sdata["id"]))
         print(sql)
         self.cursor.execute(sql)
         self.db.commit()

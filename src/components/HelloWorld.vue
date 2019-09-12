@@ -132,7 +132,7 @@ import store from "./store.js"
               this.$refs.xTable.setActiveRow(row)
             },
             saveRowEvent (row) {
-                console.log(row)
+              this.update(row)
               this.$XModal.alert("success")
               this.cancelRowEvent()
             },
@@ -201,7 +201,13 @@ import store from "./store.js"
                 .then(({ row }) => this.$refs.xTable.setActiveCell(row, 'year'))
             },
 
-
+            update (row) {
+              let insertRecords = this.$refs.xTable.getInsertRecords()
+                 this.$http.get('/init/update', {params: {data: row, year: this.year}}).then(response => {
+                    alert("success")
+                })
+            },
+            	
             rowClassName ({ row, rowIndex}) {
                 if (row.status === "完成") {
                     return 'row-green'
@@ -216,7 +222,6 @@ import store from "./store.js"
 
             getInsertEvent () {
               let insertRecords = this.$refs.xTable.getInsertRecords()
-           console.log(insertRecords)
                  this.$http.get('/init/add', {params: {data: JSON.stringify(insertRecords), year: this.year}}).then(response => {
                     alert(response.data.message)
                     this.tableData.data = response.data.data
