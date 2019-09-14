@@ -55,6 +55,7 @@
           <vxe-table-column field="task_man" title="业务员" sortable :edit-render="{name: 'input'}"></vxe-table-column>
           <vxe-table-column field="exe_man" title="执行人员" sortable :edit-render="{name: 'input'}"></vxe-table-column>
           <vxe-table-column field="common" title="备注" sortable :edit-render="{name: 'input'}"></vxe-table-column>
+          <vxe-table-column field="update_number" title="编辑次数"></vxe-table-column>
           <vxe-table-column field="create_time" title="创建时间" sortable></vxe-table-column>
           <vxe-table-column title="操作">
             <template v-slot="{ row }">
@@ -133,7 +134,6 @@ import store from "./store.js"
             },
             saveRowEvent (row) {
               this.update(row)
-              this.$XModal.alert("success")
               this.cancelRowEvent()
             },
             cancelRowEvent (row) {
@@ -146,9 +146,9 @@ import store from "./store.js"
                 }; 
                 if (role === "1" || role === "11") {
                     } else {
-                        this.$router.push({  //核心语句
-                            path:'/login',   //跳转的路径
-                            query:{           //路由传参时push和query搭配使用 ，作用时传递参数
+                        this.$router.push({
+                            path:'/login',
+                            query:{
                                 id:this.id ,
                             }
                          })
@@ -185,7 +185,6 @@ import store from "./store.js"
                 .then(({ row }) => this.$refs.xTable.setActiveCell(row, 'year'))
             },
 
-
             insertevent ({row}, event) {
               let record = {
                 profit: "不可编辑",
@@ -204,7 +203,7 @@ import store from "./store.js"
             update (row) {
               let insertRecords = this.$refs.xTable.getInsertRecords()
                  this.$http.get('/init/update', {params: {data: row, year: this.year}}).then(response => {
-                    alert("success")
+                    alert(response.data.message)
                 })
             },
             	
