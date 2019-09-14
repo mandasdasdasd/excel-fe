@@ -16,28 +16,6 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `hh`
---
-
-DROP TABLE IF EXISTS `hh`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `hh` (
-  `id` bigint(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `input` float DEFAULT NULL,
-  `output` float DEFAULT NULL,
-  `discount` float DEFAULT NULL,
-  `number` int(11) DEFAULT NULL,
-  `status` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `year` int(11) DEFAULT NULL,
-  `people` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `create_time` timestamp NOT NULL DEFAULT current_timestamp(),
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=81 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
 -- Table structure for table `project`
 --
 
@@ -73,8 +51,9 @@ CREATE TABLE `project` (
   `common` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `year` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `create_time` timestamp NOT NULL DEFAULT current_timestamp(),
+  `update_number` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -102,12 +81,14 @@ DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `id` bigint(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `user` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `pwd` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `tele_number` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `role` tinyint(4) DEFAULT NULL,
   `create_time` timestamp NOT NULL DEFAULT current_timestamp(),
   `status` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -133,4 +114,4 @@ CREATE TABLE `xyear` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-09-08 16:11:09
+-- Dump completed on 2019-09-14 11:59:05
