@@ -22,7 +22,7 @@
           },
 
         mounted: function () {   //页面初始化方法
-            this.username = this.$cookies.get("name")
+            this.username = this.$cookies.get("user")
                 },
         methods: {
             logout () {

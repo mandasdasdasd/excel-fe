@@ -13,7 +13,7 @@
             </vxe-button>
           </template>
         </vxe-toolbar>
-        
+       
      <vxe-table
           border
           ref="xTable"
@@ -57,6 +57,7 @@
           <vxe-table-column field="common" title="备注" sortable :edit-render="{name: 'input'}"></vxe-table-column>
           <vxe-table-column field="update_number" title="编辑次数"></vxe-table-column>
           <vxe-table-column field="create_time" title="创建时间" sortable></vxe-table-column>
+
           <vxe-table-column title="操作">
             <template v-slot="{ row }">
               <template v-if="$refs.xTable.hasActiveRow(row)">
@@ -68,7 +69,7 @@
               </template>
             </template>
           </vxe-table-column>
-
+            </vxe-table>
           <vxe-pager
           align="center"
           :current-page.sync="page.currentPage"
@@ -79,17 +80,8 @@
           >
         </vxe-pager>    
 
-        <vxe-modal
-            :height=100
-            :width=100
-            :message="123123"
-        >
-           sadad 
-        </vxe-modal>
-
         </div>
 </template>
-
 
 <script>
 import headd from '@/components/head'
@@ -107,7 +99,8 @@ import store from "./store.js"
                 tableData: [],
                 year: sessionStorage.getItem('year'),
                 years: [],
-                pnumber: ''
+                pnumber: '',
+                save: true
             }
           },
         components: {
@@ -173,7 +166,8 @@ import store from "./store.js"
             },
 
             insertEvent (row, event) {
-              let record = {
+                this.save = false;
+                let record = {
                 year:this.year,
                 profit: "不可编辑",
                 create_time: "不可编辑",
@@ -186,6 +180,7 @@ import store from "./store.js"
             },
 
             insertevent ({row}, event) {
+                this.save = false;
               let record = {
                 profit: "不可编辑",
                 create_time: "不可编辑",
@@ -220,7 +215,7 @@ import store from "./store.js"
             },
 
             getInsertEvent () {
-              let insertRecords = this.$refs.xTable.getInsertRecords()
+                let insertRecords = this.$refs.xTable.getInsertRecords()
                  this.$http.get('/init/add', {params: {data: JSON.stringify(insertRecords), year: this.year}}).then(response => {
                     alert(response.data.message)
                     this.tableData.data = response.data.data

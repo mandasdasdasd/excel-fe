@@ -101,6 +101,7 @@ class Add(Resource):
 
         for one in sdata:
             sql = '''insert into project (project_time, project_number, area, billing_information, contact, tele, project_sort, order_content, norm, supplier, purchase_number, original_price, discount, sell_number, sell_price,  tax, other_price, profit, billing, back_money, billing_money, task_man, exe_man, common, year, update_number) values ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', %d,%d, '%s', %d, %d, '%s', %d, '%s', '%s', '%s', '%s', '%s', '%s', '%s', %d, %d )''' % (one["project_time"], one["project_number"], one["area"], one["billing_information"], one["contact"], one["tele"], one["project_sort"], one['order_content'], one["norm"], one["supplier"], int(one["purchase_number"]), int(one["original_price"]), one["discount"], int(one["sell_number"]), int(one["sell_price"]), one["tax"], int(one["other_price"]), one["profit"], one["billing"], one["back_money"], one["billing_money"], one["task_man"], one["exe_man"], one["common"], year, 0)
+            print(sql)
             self.cursor.execute(sql)
             self.db.commit()
             return {"data": data["data"], "message": "保存成功"}
