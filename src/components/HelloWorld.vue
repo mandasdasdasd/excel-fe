@@ -58,7 +58,7 @@
           <vxe-table-column field="update_number" title="编辑次数"></vxe-table-column>
           <vxe-table-column field="create_time" title="创建时间" sortable></vxe-table-column>
 
-          <vxe-table-column title="操作">
+          <vxe-table-column title="操作" v-if="save">
             <template v-slot="{ row }">
               <template v-if="$refs.xTable.hasActiveRow(row)">
                 <vxe-button @click="saveRowEvent(row)">保存</vxe-button>
@@ -160,7 +160,7 @@ import store from "./store.js"
             xyear (item) {
                 this.year = item
                 sessionStorage.setItem('year', item)
-                this.$http.get('/init/yearsort', {params: {year: item}}).then(response => {
+                this.$http.get('/init/yearsort', {params: {year: item, pageSize: this.page.pageSize}}).then(response => {
                     this.tableData = response.data
                 })
             },
