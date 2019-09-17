@@ -102,11 +102,11 @@ import headd from '@/components/head'
                 save: true,
                 sexList: [
                     {
-                    'label': '男',
+                    'label': '现金',
                     'value': '1'
                     },
                     {
-                    'label': '女',
+                    'label': '支票',
                     'value': '0'
                     }
                     ]
