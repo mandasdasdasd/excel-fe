@@ -51,7 +51,7 @@
           <vxe-table-column v-if="role_sale" field="profit" title="利润" sortable ></vxe-table-column>
           <vxe-table-column field="billing" title="发票" sortable :edit-render="{name: 'input'}"></vxe-table-column>
           <vxe-table-column field="back_money" title="回款" sortable :edit-render="{name: 'input'}"></vxe-table-column>
-          <vxe-table-column field="billing_money" title="支票现金" sortable :edit-render="{name: 'input'}"></vxe-table-column>
+          <vxe-table-column field="billing_money" title="支票现金" sortable :edit-render="{name: 'select', options: sexList}"></vxe-table-column>
           <vxe-table-column field="task_man" title="业务员" sortable :edit-render="{name: 'input'}"></vxe-table-column>
           <vxe-table-column field="exe_man" title="执行人员" sortable :edit-render="{name: 'input'}"></vxe-table-column>
           <vxe-table-column field="common" title="备注" sortable :edit-render="{name: 'input'}"></vxe-table-column>
@@ -100,7 +100,17 @@ import store from "./store.js"
                 year: sessionStorage.getItem('year'),
                 years: [],
                 pnumber: '',
-                save: true
+                save: true,
+                sexList: [
+                    {
+                    'label': '男',
+                    'value': '1'
+                    },
+                    {
+                    'label': '女',
+                    'value': '0'
+                    }
+                    ]
             }
           },
         components: {

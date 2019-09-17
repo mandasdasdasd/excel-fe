@@ -100,8 +100,7 @@ class Add(Resource):
             return {"data": data["data"], "message": "您还没有输入数据"}
 
         for one in sdata:
-            sql = '''insert into project (project_time, project_number, area, billing_information, contact, tele, project_sort, order_content, norm, supplier, purchase_number, original_price, discount, sell_number, sell_price,  tax, other_price, profit, billing, back_money, billing_money, task_man, exe_man, common, year, update_number) values ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', %d,%d, '%s', %d, %d, '%s', %d, '%s', '%s', '%s', '%s', '%s', '%s', '%s', %d, %d )''' % (one["project_time"], one["project_number"], one["area"], one["billing_information"], one["contact"], one["tele"], one["project_sort"], one['order_content'], one["norm"], one["supplier"], int(one["purchase_number"]), int(one["original_price"]), one["discount"], int(one["sell_number"]), int(one["sell_price"]), one["tax"], int(one["other_price"]), one["profit"], one["billing"], one["back_money"], one["billing_money"], one["task_man"], one["exe_man"], one["common"], year, 0)
-            print(sql)
+            sql = '''insert into project (project_time, project_number, area, billing_information, contact, tele, project_sort, order_content, norm, supplier, purchase_number, original_price, discount, sell_number, sell_price,  tax, other_price, profit, billing, back_money, billing_money, task_man, exe_man, common, year, update_number) values ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', %f,%f, '%s', %f, %f, '%s', %d, '%s', '%s', '%s', '%s', '%s', '%s', '%s', %d, %d )''' % (one["project_time"], one["project_number"], one["area"], one["billing_information"], one["contact"], one["tele"], one["project_sort"], one['order_content'], one["norm"], one["supplier"], float(one["purchase_number"]), float(one["original_price"]), one["discount"], float(one["sell_number"]), float(one["sell_price"]), one["tax"], float(one["other_price"]), one["profit"], one["billing"], one["back_money"], one["billing_money"] if one ["billing_money"] else "1", one["task_man"], one["exe_man"], one["common"], year, 0)
             self.cursor.execute(sql)
             self.db.commit()
             return {"data": data["data"], "message": "保存成功"}
@@ -152,17 +151,17 @@ class Init(Resource):
             dd["purchase_number"] = one[11]
             dd["original_price"] = one[12]
             dd["discount"] = one[13] + "%"
-            dd["total_price"] = one[11] * abs(one[12]) * float(one[13]) / 100
+            dd["total_price"] = round(one[11] * abs(one[12]) * float(one[13]) / 100, 2)
 
             dd["sell_number"] = one[14]
             dd["sell_price"] = one[15]
-            dd["sell_total_price"] = one[14] * one[15]
+            dd["sell_total_price"] = round(one[14] * one[15], 2)
 
             dd["tax"] = one[16] + "%"
             dd["other_price"] = one[18]
-            dd["price_after_tax"] =dd["sell_total_price"]  * int(one[16]) / 100
+            dd["price_after_tax"] = round(dd["sell_total_price"]  * int(one[16]) / 100, 2)
 
-            dd["profit"] =  dd["price_after_tax"] - one[18] - dd["total_price"] 
+            dd["profit"] =  round(dd["price_after_tax"] - one[18] - dd["total_price"], 2)
             dd["billing"] = one[20]
             dd["back_money"] = one[21]
             dd["billing_money"] = one[22]
