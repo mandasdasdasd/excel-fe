@@ -39,10 +39,3 @@
          }
          }
 </script>
-
-<style scoped>
-span {
-    font-size: 25px;
-      font-family: 宋体;
-}
-

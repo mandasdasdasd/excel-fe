@@ -30,13 +30,13 @@
           <vxe-table-column field="id" width="40" title="id"></vxe-table-column>
           <vxe-table-column field="project_time" title="立项时间" sortable  :edit-render="{name: 'input'}"></vxe-table-column>
           <vxe-table-column field="project_number" title="编号" :edit-render="{name: 'input'}"></vxe-table-column>
-          <vxe-table-column field="area" title="区域"  :edit-render="{name: 'input'}"></vxe-table-column>
+          <vxe-table-column field="area" title="区域" sortable :edit-render="{name: 'input'}"></vxe-table-column>
           <vxe-table-column field="billing_information" title="开票信息" :edit-render="{name: 'input'}"></vxe-table-column>
-          <vxe-table-column field="contact" title="联系人"  sortable :edit-render="{name: 'input'}"></vxe-table-column>
-          <vxe-table-column field="tele" title="电话" sortable  :edit-render="{name: 'input'}" ></vxe-table-column>
-          <vxe-table-column field="project_sort" title="项目类别" sortable :edit-render="{name: 'input'}"></vxe-table-column>
-          <vxe-table-column field="order_content" title="订单内容" sortable :edit-render="{name: 'input'}"></vxe-table-column>
-          <vxe-table-column field="norm" title="规格" sortable :edit-render="{name: 'input'}"></vxe-table-column>
+          <vxe-table-column field="contact" title="联系人" sortable :edit-render="{name: 'input'}"></vxe-table-column>
+          <vxe-table-column field="tele" title="电话" :edit-render="{name: 'input'}" ></vxe-table-column>
+          <vxe-table-column field="project_sort" title="项目类别" :edit-render="{name: 'input'}"></vxe-table-column>
+          <vxe-table-column field="order_content" title="订单内容" :edit-render="{name: 'input'}"></vxe-table-column>
+          <vxe-table-column field="norm" title="规格" :edit-render="{name: 'input'}"></vxe-table-column>
           <vxe-table-column field="supplier" title="供应商" sortable :edit-render="{name: 'input'}"></vxe-table-column>
           <vxe-table-column field="purchase_number" title="采购量" sortable :edit-render="{name: 'input'}"></vxe-table-column>
           <vxe-table-column field="original_price" title="原价" sortable :edit-render="{name: 'input'}"></vxe-table-column>
@@ -49,12 +49,12 @@
           <vxe-table-column field="price_after_tax" title="税后价" sortable></vxe-table-column>
           <vxe-table-column field="other_price" title="其他费用" sortable :edit-render="{name: 'input'}"></vxe-table-column>
           <vxe-table-column v-if="role_sale" field="profit" title="利润" sortable ></vxe-table-column>
-          <vxe-table-column field="billing" title="发票" sortable :edit-render="{name: 'input'}"></vxe-table-column>
-          <vxe-table-column field="back_money" title="回款" sortable :edit-render="{name: 'input'}"></vxe-table-column>
-          <vxe-table-column field="billing_money" title="支票现金" sortable :edit-render="{name: 'select', options: sexList}"></vxe-table-column>
+          <vxe-table-column field="billing" title="发票" :edit-render="{name: 'input'}"></vxe-table-column>
+          <vxe-table-column field="back_money" title="回款"  :edit-render="{name: 'input'}"></vxe-table-column>
+          <vxe-table-column field="billing_money" title="支票现金" :edit-render="{name: 'select', options: sexList}"></vxe-table-column>
           <vxe-table-column field="task_man" title="业务员" sortable :edit-render="{name: 'input'}"></vxe-table-column>
           <vxe-table-column field="exe_man" title="执行人员" sortable :edit-render="{name: 'input'}"></vxe-table-column>
-          <vxe-table-column field="common" title="备注" sortable :edit-render="{name: 'input'}"></vxe-table-column>
+          <vxe-table-column field="common" title="备注" :edit-render="{name: 'input'}"></vxe-table-column>
           <vxe-table-column field="update_number" title="编辑次数"></vxe-table-column>
           <vxe-table-column field="create_time" title="创建时间" sortable></vxe-table-column>
 
@@ -212,14 +212,8 @@ import headd from '@/components/head'
             },
             	
             rowClassName ({ row, rowIndex}) {
-                if (row.status === "完成") {
+                if (row.profit > 1000) {
                     return 'row-green'
-                    }
-                else if (row.status === "紧急") {
-                    return 'row-red'
-                    }
-                else if (row.status === "失效") {
-                    return 'row-gray'
                     }
             },
 
