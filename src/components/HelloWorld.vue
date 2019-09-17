@@ -85,7 +85,6 @@
 
 <script>
 import headd from '@/components/head'
-import store from "./store.js"
 
      export default {
         data () {
