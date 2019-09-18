@@ -34,14 +34,14 @@ CREATE TABLE `project` (
   `order_content` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `norm` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `supplier` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `purchase_number` int(11) DEFAULT NULL,
-  `original_price` int(11) DEFAULT NULL,
+  `purchase_number` float DEFAULT NULL,
+  `original_price` float DEFAULT NULL,
   `discount` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `sell_number` int(11) DEFAULT NULL,
-  `sell_price` int(11) DEFAULT NULL,
+  `sell_number` float DEFAULT NULL,
+  `sell_price` float DEFAULT NULL,
   `tax` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `price_after_tax` int(11) DEFAULT NULL,
-  `other_price` int(11) DEFAULT NULL,
+  `price_after_tax` float DEFAULT NULL,
+  `other_price` float DEFAULT NULL,
   `profit` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `billing` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `back_money` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -53,7 +53,7 @@ CREATE TABLE `project` (
   `create_time` timestamp NOT NULL DEFAULT current_timestamp(),
   `update_number` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=65 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -80,15 +80,16 @@ DROP TABLE IF EXISTS `user`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `user` (
   `id` bigint(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `user` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `pwd` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `tele_number` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `role` tinyint(4) DEFAULT NULL,
+  `name` varchar(100) DEFAULT NULL,
+  `user` varchar(100) DEFAULT NULL,
+  `pwd` varchar(100) DEFAULT NULL,
+  `tele_number` varchar(100) DEFAULT NULL,
+  `role` varchar(2) DEFAULT NULL,
+  `sex` varchar(100) DEFAULT NULL,
   `create_time` timestamp NOT NULL DEFAULT current_timestamp(),
-  `status` tinyint(1) DEFAULT NULL,
+  `status` varchar(2) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -114,4 +115,4 @@ CREATE TABLE `xyear` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-09-14 11:59:05
+-- Dump completed on 2019-09-18 10:09:58
