@@ -5,7 +5,7 @@ import pymysql
 import json
 import MySQLdb
 
-from user import User
+from user import Login, UserAdd, User
 
 db = pymysql.connect("159.226.193.219","mysql","mysql","ysman" )
 cursor =db. cursor()
@@ -181,8 +181,10 @@ api.add_resource(Init, '/init')
 api.add_resource(Add, '/init/add')
 api.add_resource(Update, '/init/update')
 api.add_resource(Year, '/init/year')
-api.add_resource(User, '/init/login')
+api.add_resource(Login, '/init/login')
 api.add_resource(YearSort, '/init/yearsort')
+api.add_resource(UserAdd, '/init/useradd')
+api.add_resource(User, '/init/getuser')
 
 if __name__ == '__main__':
     app.run(debug=True)

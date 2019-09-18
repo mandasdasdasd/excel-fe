@@ -5,6 +5,7 @@
                <span style="font-size:22px"><strong>才华有限公司</strong></span>
                <span style="margin-left:15px">项目表</span>
                <span style="margin-left:15px">个人表</span>
+               <span v-if="privilege" style="margin-left:15px"> <router-link :to="{path: '/user'}">用户表</router-link></span>
             </div>
             <div class="col-md-1" style="padding-top:11px">
                <span>{{username}}</span>
@@ -18,11 +19,19 @@
         data () {
             return {
                 username: '请先登陆',
+                privilege: false,
             }
           },
 
         mounted: function () {   //页面初始化方法
             this.username = this.$cookies.get("user")
+            var cookie_privilege = this.$cookies.get("privilege")
+            if (cookie_privilege == "admin") {
+                this.privilege = true
+                }
+            else {
+                this.privilege = false
+                }
                 },
         methods: {
             logout () {
