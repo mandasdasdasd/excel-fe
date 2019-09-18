@@ -7,7 +7,7 @@ import MySQLdb
 
 from user import Login, UserAdd, User
 
-db = pymysql.connect("159.226.193.219","mysql","mysql","ysman" )
+db = pymysql.connect("127.0.0.1","mysql","mysql","ysman" )
 cursor =db. cursor()
 #data = cursor.fetchone()
 
@@ -28,11 +28,11 @@ class YearSort(Resource):
 
 class Year(Resource):
     def __init__(self):
-        self.db = pymysql.connect("159.226.193.219","mysql","mysql","ysman" )
+        self.db = pymysql.connect("127.0.0.1","mysql","mysql","ysman" )
         self.cursor =self.db. cursor()
 
     def get(self):
-        self.db = pymysql.connect("159.226.193.219","mysql","mysql","ysman" )
+        self.db = pymysql.connect("127.0.0.1","mysql","mysql","ysman" )
         self.cursor = self.db.cursor()
         sql = '''select years from xyear'''
         self.cursor.execute(sql)
@@ -45,7 +45,7 @@ class Year(Resource):
 
 class Update(Resource):
     def __init__(self):
-        self.db = pymysql.connect("159.226.193.219","mysql","mysql","ysman" )
+        self.db = pymysql.connect("127.0.0.1","mysql","mysql","ysman" )
         self.cursor = self.db.cursor()
         self.get_args = reqparse.RequestParser()
         self.get_args.add_argument("year",  type=int)
@@ -83,7 +83,7 @@ class Update(Resource):
 
 class Add(Resource):
     def __init__(self):
-        self.db = pymysql.connect("159.226.193.219","mysql","mysql","ysman" )
+        self.db = pymysql.connect("127.0.0.1","mysql","mysql","ysman" )
         self.cursor =self.db. cursor()
         self.get_args = reqparse.RequestParser()
         self.get_args.add_argument("data",  type=str)
@@ -110,7 +110,7 @@ class Add(Resource):
 
 class Init(Resource):
     def __init__(self):
-        self.db = pymysql.connect("159.226.193.219","mysql","mysql","ysman" )
+        self.db = pymysql.connect("127.0.0.1","mysql","mysql","ysman" )
         self.cursor = self.db.cursor()
         self.get_args = reqparse.RequestParser()
         self.get_args.add_argument("year",  type=int)

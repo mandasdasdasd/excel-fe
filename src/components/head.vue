@@ -26,7 +26,7 @@
         mounted: function () {   //页面初始化方法
             this.username = this.$cookies.get("user")
             var cookie_privilege = this.$cookies.get("privilege")
-            if (cookie_privilege == "admin") {
+            if (cookie_privilege === "admin") {
                 this.privilege = true
                 }
             else {
