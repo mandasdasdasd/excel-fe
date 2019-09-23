@@ -4,6 +4,7 @@ import HelloWorld from '@/components/HelloWorld'
 import login from '@/components/login'
 import head from '@/components/head'
 import user from '@/components/user'
+import task from '@/components/task'
 
 
 Vue.use(Router)
@@ -13,6 +14,10 @@ export default new Router({
     {
       path: '/',
       component: login
+    },
+    {
+      path: '/task',
+      component: task
     },
     {
       path: '/user',

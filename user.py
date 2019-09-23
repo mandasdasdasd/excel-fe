@@ -23,6 +23,7 @@ class Login(Resource):
         pwd = self.args["pwd"]
 
         sql = '''select * from user where user ="%s" and pwd="%s" and status=1 ''' % (user, pwd)
+        print(sql)
         self.cursor.execute(sql)
         res = self.cursor.fetchall()
         if res:
