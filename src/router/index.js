@@ -13,7 +13,7 @@ export default new Router({
   routes: [
     {
       path: '/',
-      component: login
+      component: task
     },
     {
       path: '/task',

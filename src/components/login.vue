@@ -51,7 +51,7 @@
                 if (response.data === 1) {
                     alert("登陆成功")
                         this.$router.push({  //核心语句
-                            path:'/list',   //跳转的路径
+                            path:'/task',   //跳转的路径
                             query:{           //路由传参时push和query搭配使用 ，作用时传递参数
                                 id:this.id ,
                             }

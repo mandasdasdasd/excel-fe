@@ -2,7 +2,7 @@
     <div class="row" style="background-color:#f5f5f5">
         <div class="col-md-12" style="height:50px">
             <div class="col-md-11" style="padding-top:11px">
-               <span style="font-size:22px"><strong>才华有限公司</strong></span>
+               <span style="font-size:22px"><strong>CNIC</strong></span>
                <span style="margin-left:15px">项目表</span>
                <span style="margin-left:15px">个人表</span>
                <span v-if="privilege" style="margin-left:15px"> <router-link :to="{path: '/user'}">用户表</router-link></span>

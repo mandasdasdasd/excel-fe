@@ -165,10 +165,12 @@ import headd from '@/components/head'
                 })
             },
             	
-            rowClassName ({ row, rowIndex}) {
-                if (row.profit > 1000) {
-                    return 'row-green'
+            cellClassName ({ row, column}) {
+		if (column.property === 'status') {
+                if (row.status === "1") {
+                    return 'col-green'
                     }
+            	}
             },
 
             getInsertEvent () {
@@ -182,7 +184,7 @@ import headd from '@/components/head'
         }
 </script>
 <style >
-.vxe-table .vxe-body--row.row-green {
+.vxe-table .vxe-body--column.col-green {
   background-color: green;
   color: #fff;
 }
