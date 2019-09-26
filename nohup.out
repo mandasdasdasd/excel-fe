@@ -217,3 +217,345 @@ Traceback (most recent call last):
     print("#############################################")
                                                          ^
 TabError: inconsistent use of tabs and spaces in indentation
+ * Serving Flask app "route" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 257-857-584
+127.0.0.1 - - [26/Sep/2019 14:28:34] "GET /init/year HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:28:34] "GET /init/gettask?page=1&pageSize=8 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:29:49] "GET /init/updatetask?data=%7B%22id%22:15,%22task%22:%22gscloud+下载日志统计+fix,+访问下载日志分开上传，+之前丢失的日志重新整理上传，+crontab+，+脚本每天定时上传%22,%22user%22:%22林老师%22,%22create_time%22:%222019-09-26+13:47:46%22,%22status%22:%221%22,%22_XID%22:%22row_2%22%7D HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:29:53] "GET /init/gettask?page=1&pageSize=8 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:29:53] "GET /init/year HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:30:23] "GET /init/updatetask?data=%7B%22id%22:14,%22task%22:%22mfsmaster+10.0.82.168+（240T），+mongo集群（9台机器）%22,%22user%22:%22王老师%22,%22create_time%22:%222019-09-23+15:07:32%22,%22status%22:%221%22,%22_XID%22:%22row_3%22%7D HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:30:25] "GET /init/year HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:30:25] "GET /init/gettask?page=1&pageSize=8 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:30:52] "GET /init/updatetask?data=%7B%22id%22:5,%22task%22:%22modis+ftp数据上传（200T左右）+159.226.245.237，XDA19020203，5070QKVW%22,%22user%22:%22林老师%22,%22create_time%22:%222019-09-23+11:13:39%22,%22status%22:%220%22,%22_XID%22:%22row_4%22%7D HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:31:09] "GET /init/updatetask?data=%7B%22id%22:5,%22task%22:%22modis+ftp数据上传（200T左右）+ftp:%2F%2F159.226.245.237，user:XDA19020203，pwd:5070QKVW%22,%22user%22:%22林老师%22,%22create_time%22:%222019-09-23+11:13:39%22,%22status%22:%220%22,%22_XID%22:%22row_4%22%7D HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:33:44] "GET /init/addtask?data=[] HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:33:49] "GET /init/updatetask?data=%7B%22id%22:4,%22task%22:%224个老项目迁移+：微生物模型云服务++近视基因组数据库++基因组可视化应用+微生物领域云+++还差微生物模型+galaxy（有问题）++马力的项目迁移（各种问题）%22,%22user%22:%22孟老师%22,%22create_time%22:%222019-09-23+11:12:30%22,%22status%22:%220%22,%22_XID%22:%22row_5%22%7D HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:33:52] "GET /init/year HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:33:52] "GET /init/gettask?page=1&pageSize=8 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:34:41] "GET /init/updatetask?data=%7B%22id%22:3,%22task%22:%22python+gdal+包；历史地图数据+；+阴影校验+经纬度+小于2+gsalinfo+查看+；+数据在+168mfs上面%22,%22user%22:%22林老师%22,%22create_time%22:%222019-09-23+11:11:32%22,%22status%22:%220%22,%22_XID%22:%22row_6%22%7D HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:35:10] "GET /init/updatetask?data=%7B%22id%22:3,%22task%22:%22python+gdal+包；历史地图数据+；+阴影校验+经纬度+小于2+gsalinfo+查看+；+历史地图数据下载放在+168mfs上面%22,%22user%22:%22林老师%22,%22create_time%22:%222019-09-23+11:11:32%22,%22status%22:%220%22,%22_XID%22:%22row_6%22%7D HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:35:13] "GET /init/year HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:35:13] "GET /init/gettask?page=1&pageSize=8 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:35:49] "GET /init/updatetask?data=%7B%22id%22:16,%22task%22:%22一批机器（20台）左右重装系统，调试了核心交换，两台核心做的堆叠（虚拟成一台），登陆其中一台即可调试另外一台%22,%22user%22:%22王老师%22,%22create_time%22:%222019-09-26+13:50:17%22,%22status%22:%221%22,%22_XID%22:%22row_1%22%7D HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:35:52] "GET /init/gettask?page=1&pageSize=8 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:35:52] "GET /init/year HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:36:47] "GET /init/updatetask?data=%7B%22id%22:16,%22task%22:%22一批机器（20台）左右重装系统（系统装在raid1（2块盘做），+其他做成raid5，调试了核心交换，两台核心做的堆叠（虚拟成一台），登陆其中一台即可调试另外一台%22,%22user%22:%22王老师%22,%22create_time%22:%222019-09-26+13:50:17%22,%22status%22:%221%22,%22_XID%22:%22row_1%22%7D HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:36:50] "GET /init/year HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:36:50] "GET /init/gettask?page=1&pageSize=8 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:36:54] "GET /init/gettask?page=1&pageSize=8 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:36:54] "GET /init/year HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:38:26] "GET /init/addtask?data=[%7B%22status%22:%220%22,%22id%22:null,%22task%22:%22课题三+机器测试，外挂+曙光存储（经常掉），+倒数据%22,%22user%22:%22林老师%22,%22create_time%22:null,%22_XID%22:%22row_7%22%7D] HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:38:28] "GET /init/gettask?page=1&pageSize=8 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:38:28] "GET /init/year HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:41:19] "GET /init/addtask?data=[%7B%22status%22:%220%22,%22id%22:null,%22task%22:%22gscloud+修复了两个bug+；+昨日下载统计统计为零（原因：日志丢失），用户统计报错：（代码bug）%22,%22user%22:null,%22create_time%22:null,%22_XID%22:%22row_8%22%7D] HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:41:22] "GET /init/year HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:41:22] "GET /init/gettask?page=1&pageSize=8 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:41:42] "GET /init/updatetask?data=%7B%22id%22:18,%22task%22:%22gscloud+修复了两个bug+；+昨日下载统计统计为零（原因：日志丢失），用户统计报错：（代码bug）%22,%22user%22:%22林老师王老师%22,%22create_time%22:%222019-09-26+14:41:19%22,%22status%22:%220%22,%22_XID%22:%22row_1%22%7D HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:41:44] "GET /init/gettask?page=1&pageSize=8 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:41:44] "GET /init/year HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:41:56] "GET /init/updatetask?data=%7B%22id%22:18,%22task%22:%22gscloud+修复了两个bug+；+昨日下载统计统计为零（原因：日志丢失），用户统计报错：（代码bug）%22,%22user%22:%22林老师王老师%22,%22create_time%22:%222019-09-26+14:41:19%22,%22status%22:%221%22,%22_XID%22:%22row_1%22%7D HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:41:58] "GET /init/gettask?page=1&pageSize=8 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:41:58] "GET /init/year HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:42:56] "GET /init/year HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:42:56] "GET /init/gettask?page=1&pageSize=8 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:43:29] "GET /init/updatetask?data=%7B%22id%22:17,%22task%22:%22课题三+机器外网测试，外挂曙光存储（经常掉），+倒数据%22,%22user%22:%22林老师%22,%22create_time%22:%222019-09-26+14:38:26%22,%22status%22:%220%22,%22_XID%22:%22row_2%22%7D HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:43:31] "GET /init/year HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:43:31] "GET /init/gettask?page=1&pageSize=8 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:44:02] "GET /init/getuser HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:44:04] "GET /init/gettask?page=1&pageSize=8 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:44:04] "GET /init/year HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:44:07] "GET /init/getuser HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:44:12] "GET /init/gettask?page=1&pageSize=8 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:44:12] "GET /init/year HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:45:04] "GET /init/year HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:45:04] "GET /init/gettask?page=1&pageSize=8 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:45:57] "GET /init/addtask?data=[%7B%22status%22:%220%22,%22id%22:null,%22task%22:%22给其他组的同事调试+nginx，+ftp，+vpn+等等服务%22,%22user%22:null,%22create_time%22:null,%22_XID%22:%22row_9%22%7D] HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:45:59] "GET /init/year HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:45:59] "GET /init/gettask?page=1&pageSize=8 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:46:04] "GET /init/updatetask?data=%7B%22id%22:19,%22task%22:%22给其他组的同事调试+nginx，+ftp，+vpn+等等服务%22,%22user%22:%22None%22,%22create_time%22:%222019-09-26+14:45:57%22,%22status%22:%221%22,%22_XID%22:%22row_1%22%7D HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:46:07] "GET /init/year HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:46:07] "GET /init/gettask?page=1&pageSize=8 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:46:24] "GET /init/updatetask?data=%7B%22id%22:19,%22task%22:%22给其他组的同事调试+nginx，+ftp，+vpn，存储，开通虚拟机+等等服务%22,%22user%22:%22None%22,%22create_time%22:%222019-09-26+14:45:57%22,%22status%22:%221%22,%22_XID%22:%22row_1%22%7D HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:46:27] "GET /init/gettask?page=1&pageSize=8 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:46:27] "GET /init/year HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:47:20] "GET /init/year HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:47:20] "GET /init/gettask?page=1&pageSize=8 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:47:21] "GET /init/getuser HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:47:25] "GET /init/gettask?page=1&pageSize=8 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:47:25] "GET /init/year HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:47:49] "GET /init/gettask?page=1&pageSize=8 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:47:49] "GET /init/year HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:48:47] "GET /init/updatetask?data=%7B%22id%22:4,%22task%22:%224个老项目迁移+：微生物模型云服务++近视基因组数据库++基因组可视化应用+微生物领域云+++还差微生物模型+galaxy（有问题）++马力的项目迁移（各种问题）的点点滴滴的点点滴滴的点点滴滴的%22,%22user%22:%22孟老师%22,%22create_time%22:%222019-09-23+11:12:30%22,%22status%22:%220%22,%22_XID%22:%22row_8%22%7D HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:48:49] "GET /init/year HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:48:49] "GET /init/gettask?page=1&pageSize=8 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:48:54] "GET /init/updatetask?data=%7B%22id%22:4,%22task%22:%224个老项目迁移+：微生物模型云服务++近视基因组数据库++基因组可视化应用+微生物领域云+++还差微生物模型+galaxy（有问题）++马力的项目迁移（各种问题）%22,%22user%22:%22孟老师%22,%22create_time%22:%222019-09-23+11:12:30%22,%22status%22:%220%22,%22_XID%22:%22row_8%22%7D HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:48:56] "GET /init/gettask?page=1&pageSize=8 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:48:56] "GET /init/year HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:49:15] "GET /init/updatetask?data=%7B%22id%22:4,%22task%22:%224个老项目迁移+：微生物模型云服务++近视基因组数据库++基因组可视化应用+微生物领域云+++还差微生物模型+galaxy（有问题）++马力的项目迁移（docker+比较乱）%22,%22user%22:%22孟老师%22,%22create_time%22:%222019-09-23+11:12:30%22,%22status%22:%220%22,%22_XID%22:%22row_8%22%7D HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:49:17] "GET /init/gettask?page=1&pageSize=8 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:49:17] "GET /init/year HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:49:56] "GET /init/updatetask?data=%7B%22id%22:19,%22task%22:%22给其他组的同事调试+nginx代理，+开通ftp，+vpn，挂存储，开通虚拟机+等等服务%22,%22user%22:%22None%22,%22create_time%22:%222019-09-26+14:45:57%22,%22status%22:%221%22,%22_XID%22:%22row_1%22%7D HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:49:59] "GET /init/year HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:49:59] "GET /init/gettask?page=1&pageSize=8 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:50:23] "GET /init/login?user=admin&pwd=admin HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:50:24] "GET /init/gettask?page=1&pageSize=8 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:50:24] "GET /init/year HTTP/1.0" 200 -
+/usr/local/lib64/python3.6/site-packages/pymysql/cursors.py:170: Warning: (1265, "Data truncated for column 'task' at row 1")
+  result = self._query(query)
+127.0.0.1 - - [26/Sep/2019 14:51:48] "GET /init/updatetask?data=%7B%22id%22:4,%22task%22:%224个老项目迁移(涉及的服务：+mongo，+postgres，+apache，+tomcat)+：微生物模型云服务++近视基因组数据库++基因组可视化应用+微生物领域云+++还差微生物模型+galaxy（有问题）++马力的项目迁移（docker+比较乱）%22,%22user%22:%22孟老师%22,%22create_time%22:%222019-09-23+11:12:30%22,%22status%22:%220%22,%22_XID%22:%22row_16%22%7D HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:54:14] "GET /init/gettask?page=1&pageSize=8 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:54:14] "GET /init/year HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 15:03:11] "GET /init/year HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 15:03:11] "GET /init/gettask?page=1&pageSize=8 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 15:06:18] "GET /init/updatetask?data=%7B%22id%22:14,%22task%22:%22mfsmaster+10.0.82.168+（240T）,搭建的时候注意关闭防火墙%26%26selinux，+mongo集群（9台机器）%22,%22user%22:%22王老师%22,%22create_time%22:%222019-09-23+15:07:32%22,%22status%22:%221%22,%22_XID%22:%22row_6%22%7D HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 15:06:22] "GET /init/gettask?page=1&pageSize=8 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 15:06:22] "GET /init/year HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 15:06:43] "GET /init/updatetask?data=%7B%22id%22:14,%22task%22:%22mfsmaster+10.0.82.168+（240T）,搭建的时候注意关闭防火墙%26%26selinux，+mongo集群（9台机器分片）%22,%22user%22:%22王老师%22,%22create_time%22:%222019-09-23+15:07:32%22,%22status%22:%221%22,%22_XID%22:%22row_6%22%7D HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 15:06:46] "GET /init/gettask?page=1&pageSize=8 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 15:06:46] "GET /init/year HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 15:07:03] "GET /init/gettask?page=1&pageSize=8 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 15:07:03] "GET /init/year HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 15:13:44] "GET /init/gettask?page=1&pageSize=8 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 15:13:44] "GET /init/year HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 15:13:50] "GET /init/gettask?page=1&pageSize=8 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 15:13:50] "GET /init/year HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 15:14:27] "GET /init/gettask?page=1&pageSize=8 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 15:14:27] "GET /init/year HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 15:16:48] "GET /init/year HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 15:16:48] "GET /init?year=2019&page=1&pageSize=8 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 15:16:52] "GET /init?year=2019&page=1&pageSize=8 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 15:16:52] "GET /init/year HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 15:17:00] "GET /init/gettask?page=1&pageSize=8 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 15:17:00] "GET /init/year HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 15:17:56] "GET /init/year HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 15:17:56] "GET /init/gettask?page=1&pageSize=8 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 15:19:00] "GET /init/gettask?page=1&pageSize=8 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 15:19:04] "GET /init/gettask?page=1&pageSize=8 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 15:19:13] "GET /init/gettask?page=1&pageSize=8 HTTP/1.0" 200 -
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 10
+update task set task='gscloud 下载日志统计 fix, 访问下载日志分开上传， 之前丢失的日志重新整理上传， crontab ， 脚本每天定时上传', user='林老师', status='1' where id =15 
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 10
+update task set task='mfsmaster 10.0.82.168 （240T）， mongo集群（9台机器）', user='王老师', status='1' where id =14 
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 10
+update task set task='modis ftp数据上传（200T左右） 159.226.245.237，XDA19020203，5070QKVW', user='林老师', status='0' where id =5 
+select * from task order by create_time desc limit 0, 10
+update task set task='modis ftp数据上传（200T左右） ftp://159.226.245.237，user:XDA19020203，pwd:5070QKVW', user='林老师', status='0' where id =5 
+select * from task order by create_time desc limit 0, 10
+select * from task order by create_time desc limit 0, 10
+update task set task='4个老项目迁移 ：微生物模型云服务  近视基因组数据库  基因组可视化应用 微生物领域云   还差微生物模型 galaxy（有问题）  马力的项目迁移（各种问题）', user='孟老师', status='0' where id =4 
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 10
+update task set task='python gdal 包；历史地图数据 ； 阴影校验 经纬度 小于2 gsalinfo 查看 ； 数据在 168mfs上面', user='林老师', status='0' where id =3 
+select * from task order by create_time desc limit 0, 10
+update task set task='python gdal 包；历史地图数据 ； 阴影校验 经纬度 小于2 gsalinfo 查看 ； 历史地图数据下载放在 168mfs上面', user='林老师', status='0' where id =3 
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 10
+update task set task='一批机器（20台）左右重装系统，调试了核心交换，两台核心做的堆叠（虚拟成一台），登陆其中一台即可调试另外一台', user='王老师', status='1' where id =16 
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 10
+update task set task='一批机器（20台）左右重装系统（系统装在raid1（2块盘做）， 其他做成raid5，调试了核心交换，两台核心做的堆叠（虚拟成一台），登陆其中一台即可调试另外一台', user='王老师', status='1' where id =16 
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 10
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 10
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 10
+update task set task='gscloud 修复了两个bug ； 昨日下载统计统计为零（原因：日志丢失），用户统计报错：（代码bug）', user='林老师王老师', status='0' where id =18 
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 10
+update task set task='gscloud 修复了两个bug ； 昨日下载统计统计为零（原因：日志丢失），用户统计报错：（代码bug）', user='林老师王老师', status='1' where id =18 
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 10
+update task set task='课题三 机器外网测试，外挂曙光存储（经常掉）， 倒数据', user='林老师', status='0' where id =17 
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 10
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 10
+update task set task='给其他组的同事调试 nginx， ftp， vpn 等等服务', user='None', status='1' where id =19 
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 10
+update task set task='给其他组的同事调试 nginx， ftp， vpn，存储，开通虚拟机 等等服务', user='None', status='1' where id =19 
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 10
+update task set task='4个老项目迁移 ：微生物模型云服务  近视基因组数据库  基因组可视化应用 微生物领域云   还差微生物模型 galaxy（有问题）  马力的项目迁移（各种问题）的点点滴滴的点点滴滴的点点滴滴的', user='孟老师', status='0' where id =4 
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 10
+update task set task='4个老项目迁移 ：微生物模型云服务  近视基因组数据库  基因组可视化应用 微生物领域云   还差微生物模型 galaxy（有问题）  马力的项目迁移（各种问题）', user='孟老师', status='0' where id =4 
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 10
+update task set task='4个老项目迁移 ：微生物模型云服务  近视基因组数据库  基因组可视化应用 微生物领域云   还差微生物模型 galaxy（有问题）  马力的项目迁移（docker 比较乱）', user='孟老师', status='0' where id =4 
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 10
+update task set task='给其他组的同事调试 nginx代理， 开通ftp， vpn，挂存储，开通虚拟机 等等服务', user='None', status='1' where id =19 
+select * from task order by create_time desc limit 0, 8
+select * from user where user ="admin" and pwd="admin" and status=1 
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 10
+update task set task='4个老项目迁移(涉及的服务： mongo， postgres， apache， tomcat) ：微生物模型云服务  近视基因组数据库  基因组可视化应用 微生物领域云   还差微生物模型 galaxy（有问题）  马力的项目迁移（docker 比较乱）', user='孟老师', status='0' where id =4 
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 10
+update task set task='mfsmaster 10.0.82.168 （240T）,搭建的时候注意关闭防火墙&&selinux， mongo集群（9台机器）', user='王老师', status='1' where id =14 
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 10
+update task set task='mfsmaster 10.0.82.168 （240T）,搭建的时候注意关闭防火墙&&selinux， mongo集群（9台机器分片）', user='王老师', status='1' where id =14 
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8127.0.0.1 - - [26/Sep/2019 15:21:53] "GET /init/gettask?page=1&pageSize=8 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 15:22:55] "GET /init/gettask?page=1&pageSize=8 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 15:23:02] "GET /init/yearsort?pageSize=8 HTTP/1.0" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 2463, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 2449, in wsgi_app
+    response = self.handle_exception(e)
+  File "/usr/local/lib64/python3.6/site-packages/flask_restful/__init__.py", line 269, in error_router
+    return original_handler(e)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1866, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib64/python3.6/site-packages/flask/_compat.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib64/python3.6/site-packages/flask_restful/__init__.py", line 269, in error_router
+    return original_handler(e)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib64/python3.6/site-packages/flask/_compat.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib64/python3.6/site-packages/flask_restful/__init__.py", line 458, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/local/lib64/python3.6/site-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib64/python3.6/site-packages/flask_restful/__init__.py", line 573, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/opt/excel-fe/route.py", line 28, in get
+    res = obj.get(year)
+  File "/opt/excel-fe/route.py", line 136, in get
+    sql = '''select * from project where year=%d order by project_number desc limit %d, %d''' % (year, start_page, pagesize)
+TypeError: %d format: a number is required, not NoneType
+127.0.0.1 - - [26/Sep/2019 15:23:04] "GET /init/yearsort?pageSize=8 HTTP/1.0" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 2463, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 2449, in wsgi_app
+    response = self.handle_exception(e)
+  File "/usr/local/lib64/python3.6/site-packages/flask_restful/__init__.py", line 269, in error_router
+    return original_handler(e)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1866, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib64/python3.6/site-packages/flask/_compat.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib64/python3.6/site-packages/flask_restful/__init__.py", line 269, in error_router
+    return original_handler(e)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib64/python3.6/site-packages/flask/_compat.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib64/python3.6/site-packages/flask_restful/__init__.py", line 458, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/local/lib64/python3.6/site-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib64/python3.6/site-packages/flask_restful/__init__.py", line 573, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/opt/excel-fe/route.py", line 28, in get
+    res = obj.get(year)
+  File "/opt/excel-fe/route.py", line 136, in get
+    sql = '''select * from project where year=%d order by project_number desc limit %d, %d''' % (year, start_page, pagesize)
+TypeError: %d format: a number is required, not NoneType
+127.0.0.1 - - [26/Sep/2019 15:23:18] "GET /init/gettask?page=1&pageSize=8 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 15:25:13] "GET /init/gettask?page=1&pageSize=8 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 15:26:07] "GET /init/gettask?page=1&pageSize=8 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 15:26:12] "GET /init/yearsort?pageSize=8 HTTP/1.0" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 2463, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 2449, in wsgi_app
+    response = self.handle_exception(e)
+  File "/usr/local/lib64/python3.6/site-packages/flask_restful/__init__.py", line 269, in error_router
+    return original_handler(e)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1866, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib64/python3.6/site-packages/flask/_compat.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib64/python3.6/site-packages/flask_restful/__init__.py", line 269, in error_router
+    return original_handler(e)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib64/python3.6/site-packages/flask/_compat.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib64/python3.6/site-packages/flask_restful/__init__.py", line 458, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/local/lib64/python3.6/site-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib64/python3.6/site-packages/flask_restful/__init__.py", line 573, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/opt/excel-fe/route.py", line 28, in get
+    res = obj.get(year)
+  File "/opt/excel-fe/route.py", line 136, in get
+    sql = '''select * from project where year=%d order by project_number desc limit %d, %d''' % (year, start_page, pagesize)
+TypeError: %d format: a number is required, not NoneType
+127.0.0.1 - - [26/Sep/2019 15:27:20] "GET /init/gettask?page=1&pageSize=8 HTTP/1.0" 200 -
+ * Detected change in '/opt/excel-fe/task.py', reloading
+
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 257-857-584
+ * Detected change in '/opt/excel-fe/task.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 257-857-584

@@ -8,7 +8,7 @@
              <vxe-button>
               <template>{{year}}</template>
               <template v-slot:dropdowns>
-                <vxe-button @click="xyear(x)" v-for="x in years">{{x}}</vxe-button>
+                <vxe-button @click="gettaskbyyear(year)" v-for="year in years">{{year}}</vxe-button>
               </template>
             </vxe-button>
           </template>
@@ -72,7 +72,7 @@ import headd from '@/components/head'
                 },
                 tableData: [],
                 year: sessionStorage.getItem('year'),
-                years: [],
+                years: [2018, 2019, 2020],
                 pnumber: '',
                 save: true,
                 sex_list: [
@@ -93,13 +93,10 @@ import headd from '@/components/head'
         mounted: function () {   //页面初始化方法
             const exp= sessionStorage.getItem('year')
             if (!exp && typeof exp!="undefined" && exp!=0) {
-                this.year=2019
+                	this.year=2019
                 } else {
                 }
-            this.init(),
-            this.$http.get('/init/year').then(response => {
-                this.years = response.data;
-            })
+            this.init()
         },
 
         methods: {
@@ -127,24 +124,26 @@ import headd from '@/components/head'
                             }
                          })
                     }
+		this.gettask()
 
-                this.$http.get('/init/gettask', {params: { page: this.page.currentPage, pageSize: this.page.pageSize}}).then(response => {
-                    this.tableData = response.data.data
-                    this.page.totalResult = response.data.total_page
-                })
             }, 
 
             handlePageChange () {
                 this.init()
             },
 
-            xyear (item) {
-                this.year = item
-                sessionStorage.setItem('year', item)
-                this.$http.get('/init/yearsort', {params: {year: item, pageSize: this.page.pageSize}}).then(response => {
-                    this.tableData = response.data
+	    gettask () {
+                this.$http.get('/init/gettask', {params: { page: this.page.currentPage, pageSize: this.page.pageSize, year: this.year}}).then(response => {
+                    this.tableData = response.data.data
+                    this.page.totalResult = response.data.total_page
                 })
-            },
+		},
+
+	    gettaskbyyear (cyear) {
+		sessionStorage.setItem('year', cyear)
+		this.year = cyear
+		this.gettask()
+		},
 
             insertEvent (row, event) {
                 this.save = false;
@@ -172,7 +171,7 @@ import headd from '@/components/head'
 
             getInsertEvent () {
                 let insertRecords = this.$refs.xTable.getInsertRecords()
-                 this.$http.get('/init/addtask', {params: {data: JSON.stringify(insertRecords)}}).then(response => {
+                 this.$http.get('/init/addtask', {params: {data: JSON.stringify(insertRecords), year: this.year}}).then(response => {
                     alert(response.data.message)
                     this.tableData.data = response.data.data
                 })

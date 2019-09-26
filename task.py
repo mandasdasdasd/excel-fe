@@ -39,10 +39,12 @@ class AddTask(Resource):
         self.cursor =self.db. cursor()
         self.get_args = reqparse.RequestParser()
         self.get_args.add_argument("data",  type=str)
+        self.get_args.add_argument("year",  type=int)
         self.args = self.get_args.parse_args()
 
     def get(self):
         sdata = json.loads(self.args["data"])
+        year = self.args["year"]
 
         obj = GetTask()
         data  = obj.get()
@@ -50,7 +52,7 @@ class AddTask(Resource):
             return {"data": data["data"], "message": "您还没有输入数据"}
 
         for one in sdata:
-            sql = '''insert into task (task, user, status) values ('%s', '%s', %d)''' % (one["task"], one["user"], int(one["status"]))
+            sql = '''insert into task (task, user, status, year) values ('%s', '%s', %d, %d)''' % (one["task"], one["user"], int(one["status"]), year)
             self.cursor.execute(sql)
             self.db.commit()
         return {"data": data, "message": "成功"}
@@ -63,6 +65,7 @@ class GetTask(Resource):
         self.get_args = reqparse.RequestParser()
         self.get_args.add_argument("page",  type=int, default=1)
         self.get_args.add_argument("pageSize",  type=int, default=10)
+        self.get_args.add_argument("year",  type=int)
         self.args = self.get_args.parse_args()
 
     def total_page(self, offset):
@@ -72,13 +75,13 @@ class GetTask(Resource):
         return number[0]
 
     def get(self, year=2019):
+        year = self.args["year"]
         page = self.args["page"]
         pagesize = self.args["pageSize"]
         total_page = self.total_page(pagesize)
 
         start_page = (page-1) * pagesize
-        sql = '''select * from task order by create_time desc limit %d, %d''' % (start_page, pagesize)
-        print(sql)
+        sql = '''select * from task where year = %d order by create_time desc limit %d, %d''' % (year, start_page, pagesize)
         self.cursor.execute(sql)
         res = self.cursor.fetchall()
         ll = []
