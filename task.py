@@ -12,6 +12,27 @@ app = Flask(__name__)
 api = Api(app)
 
 
+class UpdateTask(Resource):
+    def __init__(self):
+        self.db = pymysql.connect("127.0.0.1","mysql","mysql","ysman" )
+        self.cursor =self.db. cursor()
+        self.get_args = reqparse.RequestParser()
+        self.get_args.add_argument("data",  type=str)
+        self.args = self.get_args.parse_args()
+
+    def get(self):
+        sdata = json.loads(self.args["data"])
+
+        obj = GetTask()
+        data  = obj.get()
+
+        sql = '''update task set task='%s', user='%s', status='%s' where id =%d ''' % (sdata["task"], sdata["user"], int(sdata["status"]), int(sdata["id"]))
+        print(sql)
+        self.cursor.execute(sql)
+        self.db.commit()
+        return {"data": data, "message": "成功"}
+
+
 class AddTask(Resource):
     def __init__(self):
         self.db = pymysql.connect("127.0.0.1","mysql","mysql","ysman" )

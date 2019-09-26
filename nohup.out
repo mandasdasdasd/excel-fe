@@ -105,3 +105,115 @@
 127.0.0.1 - - [24/Sep/2019 09:24:48] "GET /init/year HTTP/1.0" 200 -
 127.0.0.1 - - [24/Sep/2019 09:25:14] "GET /init/gettask?page=1&pageSize=8 HTTP/1.0" 200 -
 127.0.0.1 - - [24/Sep/2019 09:25:14] "GET /init/year HTTP/1.0" 200 -
+127.0.0.1 - - [24/Sep/2019 09:26:27] "GET /init/gettask?page=1&pageSize=8 HTTP/1.0" 200 -
+127.0.0.1 - - [24/Sep/2019 09:26:27] "GET /init/year HTTP/1.0" 200 -
+127.0.0.1 - - [24/Sep/2019 17:17:45] "GET /init/gettask?page=1&pageSize=8 HTTP/1.0" 200 -
+127.0.0.1 - - [24/Sep/2019 17:17:45] "GET /init/year HTTP/1.0" 200 -
+127.0.0.1 - - [24/Sep/2019 17:59:25] "GET /init/year HTTP/1.0" 200 -
+127.0.0.1 - - [24/Sep/2019 17:59:25] "GET /init/gettask?page=1&pageSize=8 HTTP/1.0" 200 -
+127.0.0.1 - - [24/Sep/2019 17:59:32] "GET /init/gettask?page=1&pageSize=8 HTTP/1.0" 200 -
+127.0.0.1 - - [24/Sep/2019 17:59:32] "GET /init/year HTTP/1.0" 200 -
+127.0.0.1 - - [25/Sep/2019 09:16:59] "GET /init/gettask?page=1&pageSize=8 HTTP/1.0" 200 -
+127.0.0.1 - - [25/Sep/2019 09:16:59] "GET /init/year HTTP/1.0" 200 -
+127.0.0.1 - - [25/Sep/2019 09:25:36] "GET /init/gettask?page=1&pageSize=8 HTTP/1.0" 200 -
+127.0.0.1 - - [25/Sep/2019 09:25:36] "GET /init/year HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 13:46:51] "GET /init/gettask?page=1&pageSize=8 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 13:46:51] "GET /init/year HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 13:46:54] "GET /init/login?user=admin&pwd=admin HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 13:46:56] "GET /init/gettask?page=1&pageSize=8 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 13:46:56] "GET /init/year HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 13:47:46] "GET /init/addtask?data=[%7B%22status%22:%221%22,%22id%22:null,%22task%22:%22gscloud+下载日志统计+fix%22,%22user%22:%22林老师%22,%22create_time%22:null,%22_XID%22:%22row_5%22%7D] HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 13:47:48] "GET /init/year HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 13:47:48] "GET /init/gettask?page=1&pageSize=8 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 13:48:29] "GET /init/year HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 13:48:29] "GET /init/gettask?page=1&pageSize=8 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 13:50:17] "GET /init/addtask?data=[%7B%22status%22:%221%22,%22id%22:null,%22task%22:%22一批机器（20台）左右重装系统，搭了一个mfs（200多T空间）%22,%22user%22:%22王老师%22,%22create_time%22:null,%22_XID%22:%22row_6%22%7D] HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 13:50:19] "GET /init/gettask?page=1&pageSize=8 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 13:50:19] "GET /init/year HTTP/1.0" 200 -
+ * Detected change in '/opt/excel-fe/task.py', reloading
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+select * from user where user ="admin" and pwd="admin" and status=1 
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+select * from user where user ="admin" and pwd="admin" and status=1 
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+select * from user where user ="admin" and pwd="admin" and status=1 
+select * from user where user ="admin" and pwd="admin" and status=1 
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+select * from user where user ="admin" and pwd="admin" and status=1 
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 10
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 8
+select * from task order by create_time desc limit 0, 10
+select * from task order by create_time desc limit 0, 8
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 257-857-584
+ * Detected change in '/opt/excel-fe/task.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 257-857-584
+ * Detected change in '/opt/excel-fe/task.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 257-857-584
+ * Detected change in '/opt/excel-fe/route.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 257-857-584
+127.0.0.1 - - [26/Sep/2019 14:10:00] "GET /init/gettask?page=1&pageSize=8 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 14:10:00] "GET /init/year HTTP/1.0" 200 -
+ * Detected change in '/opt/excel-fe/task.py', reloading
+select * from task order by create_time desc limit 0, 8
+ * Restarting with stat
+Traceback (most recent call last):
+  File "/opt/excel-fe/route.py", line 9, in <module>
+    from task import AddTask, GetTask, UpdateTask
+  File "/opt/excel-fe/task.py", line 28
+    print("#############################################")
+                                                         ^
+TabError: inconsistent use of tabs and spaces in indentation

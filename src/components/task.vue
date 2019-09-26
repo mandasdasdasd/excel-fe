@@ -103,9 +103,6 @@ import headd from '@/components/head'
         },
 
         methods: {
-            al () {
-                alert(12)
-            },
             editRowEvent (row) {
               this.$refs.xTable.setActiveRow(row)
             },
@@ -160,7 +157,7 @@ import headd from '@/components/head'
 
             update (row) {
               let insertRecords = this.$refs.xTable.getInsertRecords()
-                 this.$http.get('/init/update', {params: {data: row, year: this.year}}).then(response => {
+                 this.$http.get('/init/updatetask', {params: {data: row}}).then(response => {
                     alert(response.data.message)
                 })
             },
