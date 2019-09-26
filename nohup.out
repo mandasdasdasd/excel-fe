@@ -559,3 +559,181 @@ select * from task order by create_time desc limit 0, 8
  * Restarting with stat
  * Debugger is active!
  * Debugger PIN: 257-857-584
+ * Serving Flask app "route" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 257-857-584
+127.0.0.1 - - [26/Sep/2019 16:17:01] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 16:17:04] "GET /init/gettask?page=1&pageSize=8&year=2018 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 16:17:06] "GET /init/gettask?page=1&pageSize=8&year=2020 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 16:17:06] "GET /init/gettask?page=1&pageSize=8&year=2020 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 16:17:08] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 16:18:23] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+ * Detected change in '/opt/excel-fe/task.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 257-857-584
+127.0.0.1 - - [26/Sep/2019 16:21:20] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+ * Detected change in '/opt/excel-fe/task.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 257-857-584
+127.0.0.1 - - [26/Sep/2019 16:22:12] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 16:22:13] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+ * Detected change in '/opt/excel-fe/task.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 257-857-584
+ * Detected change in '/opt/excel-fe/task.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "/opt/excel-fe/route.py", line 9, in <module>
+    from task import AddTask, GetTask, UpdateTask
+  File "/opt/excel-fe/task.py", line 91
+    u = "其他"
+            ^
+TabError: inconsistent use of tabs and spaces in indentation
+ * Serving Flask app "route" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 257-857-584
+127.0.0.1 - - [26/Sep/2019 16:26:04] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 16:31:16] "GET /init/addtask?data=[%7B%22status%22:%220%22,%22id%22:null,%22task%22:%22test%22,%22user%22:%22test%22,%22create_time%22:null,%22_XID%22:%22row_9%22%7D]&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 16:31:18] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 16:31:48] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 16:41:45] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 16:41:46] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 16:41:49] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 16:42:26] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 16:51:21] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 16:51:26] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 16:52:01] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 16:54:29] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 16:54:37] "GET /init/updatetask?data=%7B%22id%22:19,%22task%22:%22给其他组的同事调试+nginx代理，+开通ftp，+vpn，挂存储，开通虚拟机+等等服务.%22,%22user%22:%22其他%22,%22create_time%22:%222019-09-26+14:45:57%22,%22status%22:%221%22,%22_XID%22:%22row_1%22%7D HTTP/1.0" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 2463, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 2449, in wsgi_app
+    response = self.handle_exception(e)
+  File "/usr/local/lib64/python3.6/site-packages/flask_restful/__init__.py", line 269, in error_router
+    return original_handler(e)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1866, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib64/python3.6/site-packages/flask/_compat.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib64/python3.6/site-packages/flask_restful/__init__.py", line 269, in error_router
+    return original_handler(e)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib64/python3.6/site-packages/flask/_compat.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib64/python3.6/site-packages/flask_restful/__init__.py", line 458, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/local/lib64/python3.6/site-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib64/python3.6/site-packages/flask_restful/__init__.py", line 573, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/opt/excel-fe/task.py", line 27, in get
+    data  = obj.get()
+  File "/opt/excel-fe/task.py", line 84, in get
+    sql = '''select * from task where year = %d order by create_time desc limit %d, %d''' % (year, start_page, pagesize)
+TypeError: %d format: a number is required, not NoneType
+127.0.0.1 - - [26/Sep/2019 16:54:48] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 16:54:54] "GET /init/updatetask?data=%7B%22id%22:19,%22task%22:%22给其他组的同事调试+nginx代理，+开通ftp，+vpn，挂存储，开通虚拟机+等等服务.%22,%22user%22:%22其他%22,%22create_time%22:%222019-09-26+14:45:57%22,%22status%22:%221%22,%22_XID%22:%22row_1%22%7D HTTP/1.0" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 2463, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 2449, in wsgi_app
+    response = self.handle_exception(e)
+  File "/usr/local/lib64/python3.6/site-packages/flask_restful/__init__.py", line 269, in error_router
+    return original_handler(e)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1866, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib64/python3.6/site-packages/flask/_compat.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib64/python3.6/site-packages/flask_restful/__init__.py", line 269, in error_router
+    return original_handler(e)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib64/python3.6/site-packages/flask/_compat.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib64/python3.6/site-packages/flask_restful/__init__.py", line 458, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/local/lib64/python3.6/site-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib64/python3.6/site-packages/flask_restful/__init__.py", line 573, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/opt/excel-fe/task.py", line 27, in get
+    data  = obj.get()
+  File "/opt/excel-fe/task.py", line 84, in get
+    sql = '''select * from task where year = %d order by create_time desc limit %d, %d''' % (year, start_page, pagesize)
+TypeError: %d format: a number is required, not NoneType
+127.0.0.1 - - [26/Sep/2019 16:55:00] "GET /init/updatetask?data=%7B%22id%22:19,%22task%22:%22给其他组的同事调试+nginx代理，+开通ftp，+vpn，挂存储，开通虚拟机+等等服务.%22,%22user%22:%22其他%22,%22create_time%22:%222019-09-26+14:45:57%22,%22status%22:%221%22,%22_XID%22:%22row_1%22%7D HTTP/1.0" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 2463, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 2449, in wsgi_app
+    response = self.handle_exception(e)
+  File "/usr/local/lib64/python3.6/site-packages/flask_restful/__init__.py", line 269, in error_router
+    return original_handler(e)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1866, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib64/python3.6/site-packages/flask/_compat.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib64/python3.6/site-packages/flask_restful/__init__.py", line 269, in error_router
+    return original_handler(e)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib64/python3.6/site-packages/flask/_compat.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib64/python3.6/site-packages/flask_restful/__init__.py", line 458, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/local/lib64/python3.6/site-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib64/python3.6/site-packages/flask_restful/__init__.py", line 573, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/opt/excel-fe/task.py", line 27, in get
+    data  = obj.get()
+  File "/opt/excel-fe/task.py", line 84, in get
+    sql = '''select * from task where year = %d order by create_time desc limit %d, %d''' % (year, start_page, pagesize)
+TypeError: %d format: a number is required, not NoneType
+127.0.0.1 - - [26/Sep/2019 16:55:00] "GET /init/updatetask?__debugger__=yes&cmd=resource&f=style.css HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 16:55:00] "GET /init/updatetask?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 16:55:00] "GET /init/updatetask?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 16:55:00] "GET /init/updatetask?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 16:55:00] "GET /init/updatetask?__debugger__=yes&cmd=resource&f=console.png HTTP/1.0" 200 -
+127.0.0.1 - - [26/Sep/2019 16:55:00] "GET /init/updatetask?__debugger__=yes&cmd=resource&f=console.png HTTP/1.0" 200 -

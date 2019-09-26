@@ -156,8 +156,8 @@ import headd from '@/components/head'
 
             update (row) {
               let insertRecords = this.$refs.xTable.getInsertRecords()
-                 this.$http.get('/init/updatetask', {params: {data: row}}).then(response => {
-                    alert(response.data.message)
+                 this.$http.get('/init/updatetask', {params: {data: row, year: this.year}}).then(response => {
+			this.$XModal.message({ message: '更新成功', status: 'success' })
                 })
             },
             	
@@ -172,7 +172,7 @@ import headd from '@/components/head'
             getInsertEvent () {
                 let insertRecords = this.$refs.xTable.getInsertRecords()
                  this.$http.get('/init/addtask', {params: {data: JSON.stringify(insertRecords), year: this.year}}).then(response => {
-                    alert(response.data.message)
+			this.$XModal.message({ message: '保存成功', status: 'success' })
                     this.tableData.data = response.data.data
                 })
             }

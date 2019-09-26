@@ -18,13 +18,15 @@ class UpdateTask(Resource):
         self.cursor =self.db. cursor()
         self.get_args = reqparse.RequestParser()
         self.get_args.add_argument("data",  type=str)
+        self.get_args.add_argument("year",  type=int)
         self.args = self.get_args.parse_args()
 
     def get(self):
         sdata = json.loads(self.args["data"])
+        year = self.args["year"]
 
         obj = GetTask()
-        data  = obj.get()
+        data  = obj.get(year)
 
         sql = '''update task set task='%s', user='%s', status='%s' where id =%d ''' % (sdata["task"], sdata["user"], int(sdata["status"]), int(sdata["id"]))
         print(sql)
@@ -47,12 +49,12 @@ class AddTask(Resource):
         year = self.args["year"]
 
         obj = GetTask()
-        data  = obj.get()
+        data  = obj.get(year)
         if not sdata:
             return {"data": data["data"], "message": "您还没有输入数据"}
 
         for one in sdata:
-            sql = '''insert into task (task, user, status, year) values ('%s', '%s', %d, %d)''' % (one["task"], one["user"], int(one["status"]), year)
+            sql = '''insert into task (task, user, status, year) values ('%s', '%s', %d, %d)''' % (one["task"], one["user"] if one["user"] else "其他", int(one["status"]), year)
             self.cursor.execute(sql)
             self.db.commit()
         return {"data": data, "message": "成功"}
@@ -86,10 +88,13 @@ class GetTask(Resource):
         res = self.cursor.fetchall()
         ll = []
         for one in res:
+            u = one[2]
+            if not one[2] or one[2] == "None":
+                u = "其他"
             dd = {}
             dd["id"] = one[0]
             dd["task"] = one[1]
-            dd["user"] = one[2]
+            dd["user"] = u
             dd["create_time"] = str(one[3])
             dd["status"] = str(one[4])
             ll.append(dd)
