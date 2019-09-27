@@ -3,7 +3,7 @@
         <div class="col-md-12" style="height:50px">
             <div class="col-md-11" style="padding-top:11px">
                <span style="font-size:22px"><strong>CNIC</strong></span>
-               <span style="margin-left:15px">项目表</span>
+               <span style="margin-left:15px"><router-link :to="{path: '/task'}">任务表</router-link></span>
                <span v-if="privilege" style="margin-left:15px"> <router-link :to="{path: '/user'}">用户表</router-link></span>
             </div>
             <div class="col-md-1" style="padding-top:11px">

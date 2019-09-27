@@ -17,6 +17,7 @@ export default new Router({
     },
     {
       path: '/task',
+      name: 'task',
       component: task
     },
     {

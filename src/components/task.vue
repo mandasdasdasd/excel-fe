@@ -60,8 +60,8 @@
 
 <script>
 import headd from '@/components/head'
-
      export default {
+	inject:['reload'],
         data () {
             return {
                 role_sale: true,
@@ -171,9 +171,10 @@ import headd from '@/components/head'
 
             getInsertEvent () {
                 let insertRecords = this.$refs.xTable.getInsertRecords()
+		console.log(insertRecords)
                  this.$http.get('/init/addtask', {params: {data: JSON.stringify(insertRecords), year: this.year}}).then(response => {
 			this.$XModal.message({ message: '保存成功', status: 'success' })
-                    this.tableData.data = response.data.data
+			this.reload()
                 })
             }
           }

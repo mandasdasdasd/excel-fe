@@ -31,6 +31,7 @@ class Login(Resource):
             name = res[0][2]
             privilege = res[0][2]
             resp.set_cookie("role", str(res[0][5]))
+            resp.set_cookie("userid", str(res[0][0]))
             resp.set_cookie("user", name)
             resp.set_cookie("privilege", privilege)
             return resp

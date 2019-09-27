@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request
 from flask_restful import Resource, Api, reqparse
 
 import pymysql
@@ -47,6 +47,7 @@ class AddTask(Resource):
     def get(self):
         sdata = json.loads(self.args["data"])
         year = self.args["year"]
+        userid = request.cookies.get('userid')
 
         obj = GetTask()
         data  = obj.get(year)
@@ -54,7 +55,8 @@ class AddTask(Resource):
             return {"data": data["data"], "message": "您还没有输入数据"}
 
         for one in sdata:
-            sql = '''insert into task (task, user, status, year) values ('%s', '%s', %d, %d)''' % (one["task"], one["user"] if one["user"] else "其他", int(one["status"]), year)
+            sql = '''insert into task (task, user, status, year, userid) values ('%s', '%s', %d, %d, %d)''' % (one["task"], one["user"] if one["user"] else "其他", int(one["status"]), year, int(userid))
+            print(sql)
             self.cursor.execute(sql)
             self.db.commit()
         return {"data": data, "message": "成功"}
@@ -70,20 +72,21 @@ class GetTask(Resource):
         self.get_args.add_argument("year",  type=int)
         self.args = self.get_args.parse_args()
 
-    def total_page(self, offset):
-        sql = '''select count(id) from project'''
+    def total_page(self, offset, userid):
+        sql = '''select count(id) from task where userid = %d''' % int(userid)
         self.cursor.execute(sql)
         number = self.cursor.fetchone()
         return number[0]
 
     def get(self, year=2019):
+        userid = request.cookies.get('userid')
         year = self.args["year"]
         page = self.args["page"]
         pagesize = self.args["pageSize"]
-        total_page = self.total_page(pagesize)
+        total_page = self.total_page(pagesize, userid)
 
         start_page = (page-1) * pagesize
-        sql = '''select * from task where year = %d order by create_time desc limit %d, %d''' % (year, start_page, pagesize)
+        sql = '''select * from task where year = %d and userid = %d order by create_time desc limit %d, %d''' % (year, int(userid), start_page, pagesize)
         self.cursor.execute(sql)
         res = self.cursor.fetchall()
         ll = []
