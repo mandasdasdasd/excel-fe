@@ -49,7 +49,7 @@
             login () {
                 this.$http.get('/init/login', {params: {user: this.$refs.user.value, pwd: this.$refs.pwd.value}}).then(response => {
                 if (response.data === 1) {
-                    alert("登陆成功")
+			this.$XModal.message({ message: '更新成功', status: 'success' })
                         this.$router.push({  //核心语句
                             path:'/task',   //跳转的路径
                             query:{           //路由传参时push和query搭配使用 ，作用时传递参数
@@ -57,7 +57,7 @@
                             }
                          })
                     } else {
-                    alert("登陆失败")
+			this.$XModal.message({ message: '登陆失败', status: 'error' })
                     }
                 })
             },
