@@ -904,3 +904,205 @@ TypeError: %d format: a number is required, not NoneType
 127.0.0.1 - - [29/Sep/2019 14:11:53] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
 127.0.0.1 - - [29/Sep/2019 14:11:54] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
 127.0.0.1 - - [29/Sep/2019 14:11:55] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:13:02] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:13:04] "GET /init/gettask?page=1&pageSize=8&year=2018 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:13:05] "GET /init/gettask?page=1&pageSize=8&year=2018 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:13:06] "GET /init/gettask?page=1&pageSize=8&year=2020 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:13:08] "GET /init/gettask?page=1&pageSize=8&year=2020 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:13:12] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:13:14] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:13:16] "GET /init/gettask?page=1&pageSize=8&year=2018 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:13:17] "GET /init/gettask?page=1&pageSize=8&year=2018 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:13:30] "GET /init/gettask?page=1&pageSize=8&year=2018 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:13:42] "GET /init/gettask?page=1&pageSize=8&year=2018 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:13:49] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:13:51] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:14:04] "GET /init/gettask?page=1&pageSize=8&year=2018 HTTP/1.0" 200 -
+ * Detected change in '/opt/excel-fe/task.py', reloading
+insert into task (task, user, status, year, userid) values ('1', '其他', 0, 2019, 23)
+insert into task (task, user, status, year, userid) values ('2', '其他', 0, 2019, 23)
+insert into task (task, user, status, year, userid) values ('3', '其他', 0, 2019, 23)
+insert into task (task, user, status, year, userid) values ('2', '其他', 0, 2019, 23)
+insert into task (task, user, status, year, userid) values ('4', '其他', 0, 2019, 23)
+insert into task (task, user, status, year, userid) values ('3', '其他', 0, 2019, 23)
+insert into task (task, user, status, year, userid) values ('2', '其他', 0, 2019, 23)
+insert into task (task, user, status, year, userid) values ('1', '其他', 0, 2019, 23)
+insert into task (task, user, status, year, userid) values ('2', '其他', 0, 2019, 23)
+insert into task (task, user, status, year, userid) values ('1', '其他', 0, 2019, 23)
+insert into task (task, user, status, year, userid) values ('q', '其他', 0, 2019, 23)
+insert into task (task, user, status, year, userid) values ('2', '其他', 0, 2019, 23)
+insert into task (task, user, status, year, userid) values ('q', '其他', 0, 2019, 23)
+update task set task='111', user='满宇帅的BUG', status='0' where id =38 
+update task set task='222', user='满宇帅的BUG', status='0' where id =37 
+update task set task='111', user='满宇帅的BUG', status='0' where id =36 
+update task set task='222', user='满宇帅的BUG', status='0' where id =37 
+update task set task='111', user='满宇帅的BUG', status='0' where id =38 
+insert into task (task, user, status, year, userid) values ('123123', '其他', 0, 2019, 23)
+insert into task (task, user, status, year, userid) values ('123123', '其他', 0, 2019, 23)
+insert into task (task, user, status, year, userid) values ('123123', '其他', 0, 2019, 23)
+insert into task (task, user, status, year, userid) values ('1', '其他', 0, 2019, 23)
+insert into task (task, user, status, year, userid) values ('2', '其他', 0, 2019, 23)
+insert into task (task, user, status, year, userid) values ('1', '其他', 0, 2019, 23)
+insert into task (task, user, status, year, userid) values ('a', '其他', 0, 2019, 23)
+insert into task (task, user, status, year, userid) values ('b', '其他', 0, 2019, 23)
+insert into task (task, user, status, year, userid) values ('a', '其他', 0, 2019, 23)
+update task set task='上传数据（有问题）', user='满宇帅的BUG', status='0' where id =35 
+insert into task (task, user, status, year, userid) values ('1', '其他', 0, 2019, 23)
+insert into task (task, user, status, year, userid) values ('2', '其他', 0, 2019, 23)
+insert into task (task, user, status, year, userid) values ('1', '其他', 0, 2019, 23)
+insert into task (task, user, status, year, userid) values ('ggg', '其他', 0, 2019, 23)
+insert into task (task, user, status, year, userid) values ('gggg', '其他', 0, 2019, 23)
+insert into task (task, user, status, year, userid) values ('ggg', '其他', 0, 2019, 23)
+insert into task (task, user, status, year, userid) values ('123', '其他', 0, 2019, 23)
+insert into task (task, user, status, year, userid) values ('333', '其他', 0, 2019, 23)
+insert into task (task, user, status, year, userid) values ('123', '其他', 0, 2019, 23)
+insert into task (task, user, status, year, userid) values ('333', '其他', 0, 2019, 23)
+insert into task (task, user, status, year, userid) values ('333', '其他', 0, 2019, 23)
+insert into task (task, user, status, year, userid) values ('123', '其他', 0, 2019, 23)
+insert into task (task, user, status, year, userid) values ('222', '其他', 0, 2019, 23)
+select * from user where user ="admin" and pwd="admin" and status=1 
+insert into task (task, user, status, year, userid) values ('231', '其他', 0, 2019, 23)
+insert into task (task, user, status, year, userid) values ('123', '其他', 0, 2019, 23)
+insert into task (task, user, status, year, userid) values ('231', '其他', 0, 2019, 23)
+insert into task (task, user, status, year, userid) values ('333', '其他', 0, 2019, 23)
+insert into task (task, user, status, year, userid) values ('3333333', '其他', 0, 2019, 23)
+insert into task (task, user, status, year, userid) values ('5555', '其他', 0, 2019, 23)
+insert into task (task, user, status, year, userid) values ('3333333', '其他', 0, 2019, 23)
+insert into task (task, user, status, year, userid) values ('yyy', '其他', 0, 2019, 23)
+insert into task (task, user, status, year, userid) values ('ooooo', '其他', 0, 2019, 23)
+insert into task (task, user, status, year, userid) values ('pppppp', '其他', 0, 2019, 23)
+insert into task (task, user, status, year, userid) values ('77777', '其他', 0, 2019, 23)
+insert into task (task, user, status, year, userid) values ('8888', '其他', 0, 2019, 23)
+insert into task (task, user, status, year, userid) values ('bbbbbb', '其他', 0, 2019, 23)
+insert into task (task, user, status, year, userid) values ('cc', '其他', 0, 2019, 23)
+insert into task (task, user, status, year, userid) values ('cc', '其他', 0, 2019, 23)
+select * from user where user ="admin" and pwd="admin" and status=1 
+update task set task='gscloud 下载日志统计 fix, 访问下载日志分开上传， 之前丢失的日志重新整理上传， crontab ， 脚本每天定时上传.', user='林老师', status='1' where id =15 
+select * from user where user ="xiaomogu" and pwd="xiaomogu" and status=1 
+select * from user where user ="admin" and pwd="admin" and status=1 
+select * from user where user ="xiaomogu" and pwd="xiaomogu" and status=1 
+select * from user where user ="xiaomogu" and pwd="xiaomogu" and status=1 
+select * from user where user ="admin" and pwd="admin" and status=1 
+insert into task (task, user, status, year, userid) values ('123', '其他', 0, 2019, 23)
+insert into task (task, user, status, year, userid) values ('123', '其他', 0, 2019, 23)
+insert into task (task, user, status, year, userid) values ('123', '1', 0, 2019, 23)
+insert into task (task, user, status, year, userid) values ('123', '123', 0, 2019, 23)
+select * from user where user ="admin" and pwd="admin" and status=1 
+select * from user where user ="ysman" and pwd="123456" and status=1 
+select * from user where user ="xiaomogu" and pwd="xiaomogu" and status=1 
+select * from user where user ="admin" and pwd="admin" and status=1 
+select * from user where user ="admin" and pwd="admin" and status=1 
+select * from user where user ="admin" and pwd="admin" and status=1 
+update task set task='python gdal 包；历史地图数据 ； 阴影校验 经纬度 小于2 gsalinfo 查看 ； 历史地图数据下载放在 168mfs上面', user='林老师', status='1' where id =3 
+select * from user where user ="admin" and pwd="admin" and status=1 
+select * from user where user ="admin" and pwd="admin" and status=1 
+select * from user where user ="admin" and pwd="admin" and status=1 
+update task set task='4个老项目迁移(涉及的服务： mongo， postgres， apache， tomcat) ：微生物模型云服务  近视基因组数据库  基因组可视化应用 微生物领域云   还差微生物模型 galaxy', user='孟老师', status='0' where id =4 
+select * from user where user ="admin" and pwd="admin" and status=1 
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 257-857-584
+127.0.0.1 - - [29/Sep/2019 14:16:09] "GET /init/gettask?page=1&pageSize=8&year=2018 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:16:11] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:16:15] "GET /init/gettask?page=2&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:16:16] "GET /init/gettask?page=2&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:16:17] "GET /init/gettask?page=2&pageSize=8&year=2020 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:17:11] "GET /init/gettask?page=2&pageSize=8&year=2020 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:17:13] "GET /init/gettask?page=2&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:17:15] "GET /init/gettask?page=2&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:17:16] "GET /init/gettask?page=2&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:17:18] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:17:19] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:17:21] "GET /init/gettask?page=2&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:17:22] "GET /init/gettask?page=2&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:17:23] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:17:24] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:17:24] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:17:25] "GET /init/gettask?page=1&pageSize=8&year=2018 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:17:26] "GET /init/gettask?page=1&pageSize=8&year=2018 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:17:26] "GET /init/gettask?page=1&pageSize=8&year=2018 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:17:27] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:17:28] "GET /init/gettask?page=2&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:31:59] "GET /init/gettask?page=2&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:32:00] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:32:07] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:32:16] "GET /init/gettask?page=2&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:32:17] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:32:20] "GET /init/gettask?page=1&pageSize=8&year=2018 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:32:21] "GET /init/gettask?page=1&pageSize=8&year=2018 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:32:23] "GET /init/gettask?page=1&pageSize=8&year=2020 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:32:24] "GET /init/gettask?page=1&pageSize=8&year=2020 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:32:25] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:32:26] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:32:31] "GET /init/login?user=admin&pwd=admin HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:32:31] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:38:49] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:40:05] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:40:19] "GET /init/addtask?data=[%7B%22status%22:%220%22,%22id%22:null,%22task%22:%22asdasdasd%5Cnasdasdasdasd%5Cnasdasdasdasd%5Cnasdasdasdasd%5Cnasdasdasdasd%5Cnasdasdasdasd%22,%22user%22:null,%22create_time%22:null,%22_XID%22:%22row_9%22%7D]&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:40:19] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:40:30] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:40:44] "GET /init/addtask?data=[%7B%22status%22:%220%22,%22id%22:null,%22task%22:%2211111111111111%5Cn222222222222222%5Cn3333333333333%5Cn444444444444%5Cn5555555555%5Cn666666666666%22,%22user%22:null,%22create_time%22:null,%22_XID%22:%22row_9%22%7D]&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:40:44] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:41:04] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:41:06] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:42:18] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:43:40] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:44:29] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:46:39] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:46:56] "GET /init/addtask?data=[%7B%22status%22:%220%22,%22id%22:null,%22task%22:%22eqweqwe%5C%5Cr%5C%5Cn%5Cnqweqweqweqwe%5C%5Cr%5C%5Cn%5Cn1111111111111111%5C%5Cr%5C%5Cn%22,%22user%22:null,%22create_time%22:null,%22_XID%22:%22row_9%22%7D]&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:46:56] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:46:59] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:58:44] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:58:49] "GET /init/gettask?page=2&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:58:50] "GET /init/gettask?page=2&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 14:58:51] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+ * Detected change in '/opt/excel-fe/task.py', reloading
+select * from user where user ="admin" and pwd="admin" and status=1 
+insert into task (task, user, status, year, userid) values ('asdasdasd
+asdasdasdasd
+asdasdasdasd
+asdasdasdasd
+asdasdasdasd
+asdasdasdasd', '其他', 0, 2019, 23)
+insert into task (task, user, status, year, userid) values ('11111111111111
+222222222222222
+3333333333333
+444444444444
+5555555555
+666666666666', '其他', 0, 2019, 23)
+insert into task (task, user, status, year, userid) values ('eqweqwe\r\n
+qweqweqweqwe\r\n
+1111111111111111\r\n', '其他', 0, 2019, 23)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 257-857-584
+127.0.0.1 - - [29/Sep/2019 15:07:22] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 15:07:28] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 15:08:54] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 15:09:05] "GET /init/addtask?data=[%7B%22status%22:%220%22,%22priority%22:%221%22,%22id%22:null,%22task%22:%22123%22,%22user%22:%22123%22,%22create_time%22:null,%22_XID%22:%22row_9%22%7D]&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 15:09:05] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 15:09:07] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 15:09:26] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 15:10:01] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+ * Detected change in '/opt/excel-fe/task.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 257-857-584
+127.0.0.1 - - [29/Sep/2019 15:11:12] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+ * Detected change in '/opt/excel-fe/task.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 257-857-584
+127.0.0.1 - - [29/Sep/2019 15:13:22] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 15:13:29] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+ * Detected change in '/opt/excel-fe/task.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 257-857-584
+ * Detected change in '/opt/excel-fe/task.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 257-857-584
+127.0.0.1 - - [29/Sep/2019 15:15:03] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 15:15:07] "GET /init/updatetask?data=%7B%22id%22:149,%22task%22:%22123%22,%22user%22:%22123%22,%22create_time%22:%222019-09-29+15:09:05%22,%22status%22:%220%22,%22priority%22:%222%22,%22_XID%22:%22row_1%22%7D&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [29/Sep/2019 15:15:09] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -

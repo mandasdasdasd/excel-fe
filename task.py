@@ -28,8 +28,7 @@ class UpdateTask(Resource):
         obj = GetTask()
         data  = obj.get(year)
 
-        sql = '''update task set task='%s', user='%s', status='%s' where id =%d ''' % (sdata["task"], sdata["user"], int(sdata["status"]), int(sdata["id"]))
-        print(sql)
+        sql = '''update task set task='%s', user='%s', status='%s', priority=%d where id =%d ''' % (sdata["task"], sdata["user"], int(sdata["status"]), int(sdata["priority"]), int(sdata["id"]))
         self.cursor.execute(sql)
         self.db.commit()
         return {"data": data, "message": "成功"}
@@ -55,8 +54,7 @@ class AddTask(Resource):
             return {"data": data["data"], "message": "您还没有输入数据"}
 
         for one in sdata:
-            sql = '''insert into task (task, user, status, year, userid) values ('%s', '%s', %d, %d, %d)''' % (one["task"], one["user"] if one["user"] else "其他", int(one["status"]), year, int(userid))
-            print(sql)
+            sql = '''insert into task (task, user, status, year, userid, priority) values ('%s', '%s', %d, %d, %d, %d)''' % (one["task"], one["user"] if one["user"] else "其他", int(one["status"]), year, int(userid), int(one["priority"]))
             self.cursor.execute(sql)
             self.db.commit()
         return {"data": data, "message": "成功"}
@@ -100,6 +98,7 @@ class GetTask(Resource):
             dd["user"] = u
             dd["create_time"] = str(one[3])
             dd["status"] = str(one[4])
+            dd["priority"] = str(one[7])
             ll.append(dd)
         res = {}
         res["data"] = ll

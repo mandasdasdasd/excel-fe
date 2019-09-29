@@ -30,8 +30,9 @@
           :edit-config="{trigger: 'click', mode: 'row'}">
 
           <vxe-table-column field="id" width="40" title="id"></vxe-table-column>
-          <vxe-table-column field="task" title="任务" :edit-render="{name: 'input'}"></vxe-table-column>
+          <vxe-table-column field="task" title="任务" :edit-render="{name: 'textarea'}"></vxe-table-column>
           <vxe-table-column field="user" title="用户" sortable :edit-render="{name: 'input'}"></vxe-table-column>
+          <vxe-table-column field="priority" title="优先级" sortable :edit-render="{name: 'select',  options: priority_list}"></vxe-table-column>
           <vxe-table-column field="status" title="状态" sortable :edit-render="{name: 'select', options: sex_list}"></vxe-table-column>
           <vxe-table-column field="create_time" title="创建时间" sortable></vxe-table-column>
 
@@ -77,6 +78,20 @@ import headd from '@/components/head'
                 years: [2018, 2019, 2020],
                 pnumber: '',
                 save: true,
+                priority_list: [
+                    {
+                    'label': '高',
+                    'value': '2'
+                    },
+                    {
+                    'label': '中',
+                    'value': '1'
+                    },
+                    {
+                    'label': '低',
+                    'value': '0'
+                    }
+                    ],
                 sex_list: [
                     {
                     'label': '已完成',
@@ -156,6 +171,7 @@ import headd from '@/components/head'
                 this.save = false;
                 let record = {
                		status: "0",
+			priority: "1"
               }
 		 this.$refs.xTable.insertAt(record, row)
                 .then(({ row }) => this.$refs.xTable.setActiveCell(row, 'status'))
