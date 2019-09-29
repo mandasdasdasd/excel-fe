@@ -13,8 +13,10 @@
             </vxe-button>
           </template>
         </vxe-toolbar>
+
        
      <vxe-table
+	  resizable
           border
           ref="xTable"
           class="mytable-style"
@@ -66,7 +68,7 @@ import headd from '@/components/head'
             return {
                 role_sale: true,
                 page: {
-                    currentPage: 1,
+                    currentPage: sessionStorage.getItem('currentPage'),
                     pageSize: 8,
                     totalResult: 50
                 },
@@ -92,7 +94,7 @@ import headd from '@/components/head'
         },
         mounted: function () {   //页面初始化方法
             const exp= sessionStorage.getItem('year')
-            if (!exp && typeof exp!="undefined" && exp!=0) {
+            if (!exp && typeof(exp) != "undefined" && exp!=0) {
                 	this.year=2019
                 } else {
                 }
@@ -111,6 +113,11 @@ import headd from '@/components/head'
               this.$refs.xTable.clearActived()
             },
             init () {
+		const cpage = sessionStorage.getItem('currentPage')
+            	if (cpage === "null") {
+                	this.page.currentPage=1
+                	} else {
+                	};
                 const role = this.$cookies.get("role")
                 if (role === "11") {
                     this.role_sale = false
@@ -123,17 +130,17 @@ import headd from '@/components/head'
                                 id:this.id ,
                             }
                          })
-                    }
-		this.gettask()
-
+                    };
+		this.gettask(this.page.currentPage)
             }, 
 
             handlePageChange () {
+		sessionStorage.setItem('currentPage', this.page.currentPage)
                 this.init()
             },
 
-	    gettask () {
-                this.$http.get('/init/gettask', {params: { page: this.page.currentPage, pageSize: this.page.pageSize, year: this.year}}).then(response => {
+	    gettask (cpage) {
+                this.$http.get('/init/gettask', {params: { page: cpage, pageSize: this.page.pageSize, year: this.year}}).then(response => {
                     this.tableData = response.data.data
                     this.page.totalResult = response.data.total_page
                 })
@@ -142,7 +149,7 @@ import headd from '@/components/head'
 	    gettaskbyyear (cyear) {
 		sessionStorage.setItem('year', cyear)
 		this.year = cyear
-		this.gettask()
+		this.gettask(this.page.currentPage)
 		},
 
             insertEvent (row, event) {
