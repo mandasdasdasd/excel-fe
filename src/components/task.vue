@@ -186,8 +186,13 @@ import headd from '@/components/head'
             	
             cellClassName ({ row, column}) {
 		if (column.property === 'status') {
-                if (row.status === "1") {
-                    return 'col-green'
+                	if (row.status === "1") {
+                    		return 'col-green'
+                    }
+            	}
+		if (column.property === 'priority') {
+                	if (row.priority === "2") {
+                    		return 'col-red'
                     }
             	}
             },
@@ -206,6 +211,10 @@ import headd from '@/components/head'
 <style >
 .vxe-table .vxe-body--column.col-green {
   background-color: green;
+  color: #fff;
+}
+.vxe-table .vxe-body--column.col-red {
+  background-color: red;
   color: #fff;
 }
 .vxe-table .vxe-body--row.row-red {
