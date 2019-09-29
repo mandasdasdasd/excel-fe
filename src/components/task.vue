@@ -3,8 +3,8 @@
         <headd></headd>
         <vxe-toolbar style="margin-top:20px">
           <template v-slot:buttons>
-            <vxe-button @click="getInsertEvent()">保存</vxe-button>
-            <vxe-button @click="insertEvent()">新增</vxe-button>
+            <vxe-button v-if="xx" @click="getInsertEvent()">保存</vxe-button>
+            <vxe-button  v-if="xx" @click="insertEvent()">新增</vxe-button>
              <vxe-button>
               <template>{{year}}</template>
               <template v-slot:dropdowns>
@@ -67,6 +67,7 @@ import headd from '@/components/head'
 	inject:['reload'],
         data () {
             return {
+		xx: true,
                 role_sale: true,
                 page: {
                     currentPage: sessionStorage.getItem('currentPage'),
@@ -118,6 +119,7 @@ import headd from '@/components/head'
 
         methods: {
             editRowEvent (row) {
+		this.xx=false
               this.$refs.xTable.setActiveRow(row)
             },
             saveRowEvent (row) {
