@@ -72,8 +72,8 @@ class GetTask(Resource):
         self.get_args.add_argument("year",  type=int)
         self.args = self.get_args.parse_args()
 
-    def total_page(self, offset, userid):
-        sql = '''select count(id) from task where userid = %d''' % int(userid)
+    def total_page(self, offset, userid, year):
+        sql = '''select count(id) from task where userid = %d and year= %d''' % (int(userid), year)
         self.cursor.execute(sql)
         number = self.cursor.fetchone()
         return number[0]
@@ -83,7 +83,7 @@ class GetTask(Resource):
         year = self.args["year"]
         page = self.args["page"]
         pagesize = self.args["pageSize"]
-        total_page = self.total_page(pagesize, userid)
+        total_page = self.total_page(pagesize, userid, year)
 
         start_page = (page-1) * pagesize
         sql = '''select * from task where year = %d and userid = %d order by create_time desc limit %d, %d''' % (year, int(userid), start_page, pagesize)
