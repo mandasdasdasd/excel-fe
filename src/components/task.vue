@@ -29,7 +29,7 @@
           @cell-dblclick='insertevent'
           :edit-config="{trigger: 'click', mode: 'row'}">
 
-          <vxe-table-column field="id" width="40" title="id"></vxe-table-column>
+          <vxe-table-column field="id" width="50" title="id"></vxe-table-column>
           <vxe-table-column field="task" title="任务" :edit-render="{name: 'textarea'}"></vxe-table-column>
           <vxe-table-column field="user" title="用户"  width="10%" sortable :edit-render="{name: 'input'}"></vxe-table-column>
           <vxe-table-column field="priority" title="优先级" width="10%" sortable :edit-render="{name: 'select',  options: priority_list}"></vxe-table-column>
