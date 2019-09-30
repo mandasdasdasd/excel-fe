@@ -50,7 +50,8 @@ class AddTask(Resource):
 
         obj = GetTask()
         data  = obj.get(year)
-        if not sdata:
+        if not sdata[0]["task"]:
+            print(1111)
             return {"data": data["data"], "message": "您还没有输入数据"}
 
         for one in sdata:

@@ -1329,3 +1329,49 @@ TypeError: int() argument must be a string, a bytes-like object or a number, not
 127.0.0.1 - - [30/Sep/2019 11:06:25] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
 127.0.0.1 - - [30/Sep/2019 11:07:25] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
 127.0.0.1 - - [30/Sep/2019 11:08:22] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [30/Sep/2019 11:20:19] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [30/Sep/2019 11:20:19] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [30/Sep/2019 11:20:29] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [30/Sep/2019 11:22:15] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [30/Sep/2019 11:22:17] "GET /init/gettask?page=2&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [30/Sep/2019 11:22:19] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [30/Sep/2019 11:22:21] "GET /init/gettask?page=2&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [30/Sep/2019 11:22:22] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [30/Sep/2019 11:22:27] "GET /init/login?user=xiaomogu&pwd=xiaomogu HTTP/1.0" 200 -
+127.0.0.1 - - [30/Sep/2019 11:22:27] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [30/Sep/2019 11:22:33] "GET /init/login?user=admin&pwd=admin HTTP/1.0" 200 -
+127.0.0.1 - - [30/Sep/2019 11:22:33] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [30/Sep/2019 11:22:40] "GET /init/login?user=xiaomogu&pwd=xiaomogu HTTP/1.0" 200 -
+127.0.0.1 - - [30/Sep/2019 11:22:40] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [30/Sep/2019 11:22:46] "GET /init/gettask?page=2&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [30/Sep/2019 11:22:47] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [30/Sep/2019 11:22:52] "GET /init/addtask?data=[]&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [30/Sep/2019 11:22:52] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [30/Sep/2019 11:22:55] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [30/Sep/2019 11:22:57] "GET /init/updatetask?data=%7B%22id%22:38,%22task%22:%22111%22,%22user%22:%22满宇帅的BUG%22,%22create_time%22:%222019-09-27+13:47:54%22,%22status%22:%220%22,%22priority%22:%220%22,%22_XID%22:%22row_2%22%7D&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [30/Sep/2019 11:23:01] "GET /init/updatetask?data=%7B%22id%22:38,%22task%22:%22111%22,%22user%22:%22满宇帅的BUG%22,%22create_time%22:%222019-09-27+13:47:54%22,%22status%22:%220%22,%22priority%22:%221%22,%22_XID%22:%22row_2%22%7D&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [30/Sep/2019 11:23:05] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [30/Sep/2019 11:23:20] "GET /init/login?user=admin&pwd=admin HTTP/1.0" 200 -
+127.0.0.1 - - [30/Sep/2019 11:23:20] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [30/Sep/2019 11:23:41] "GET /init/addtask?data=[%7B%22status%22:%220%22,%22priority%22:%221%22,%22task%22:null,%22user%22:null,%22create_time%22:null,%22_XID%22:%22row_17%22%7D]&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [30/Sep/2019 11:23:41] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [30/Sep/2019 11:23:43] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+ * Detected change in '/opt/excel-fe/task.py', reloading
+select * from user where user ="xiaomogu" and pwd="xiaomogu" and status=1 
+select * from user where user ="admin" and pwd="admin" and status=1 
+select * from user where user ="xiaomogu" and pwd="xiaomogu" and status=1 
+select * from user where user ="admin" and pwd="admin" and status=1 
+select * from user where user ="admin" and pwd="admin" and status=1 
+select * from user where user ="admin" and pwd="admin" and status=1 
+select * from user where user ="admin" and pwd="admin" and status=1 
+select * from user where user ="admin" and pwd="admin" and status=1 
+select * from user where user ="admin" and pwd="admin" and status=1 
+select * from user where user ="xiaomogu" and pwd="xiaomogu" and status=1 
+select * from user where user ="admin" and pwd="admin" and status=1 
+select * from user where user ="xiaomogu" and pwd="xiaomogu" and status=1 
+select * from user where user ="admin" and pwd="admin" and status=1 
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 257-857-584
+127.0.0.1 - - [30/Sep/2019 11:24:21] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [30/Sep/2019 11:24:24] "GET /init/addtask?data=[%7B%22status%22:%220%22,%22priority%22:%221%22,%22task%22:null,%22user%22:null,%22create_time%22:null,%22_XID%22:%22row_9%22%7D]&year=2019 HTTP/1.0" 500 -

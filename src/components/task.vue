@@ -29,7 +29,7 @@
           @cell-dblclick='insertevent'
           :edit-config="{trigger: 'click', mode: 'row'}">
 
-          <vxe-table-column field="id" width="50" title="id"></vxe-table-column>
+          <vxe-table-column width="50" type="index" title="序号"></vxe-table-column>
           <vxe-table-column field="task" title="任务" :edit-render="{name: 'textarea'}"></vxe-table-column>
           <vxe-table-column field="user" title="用户"  width="10%" sortable :edit-render="{name: 'input'}"></vxe-table-column>
           <vxe-table-column field="priority" title="优先级" width="10%" sortable :edit-render="{name: 'select',  options: priority_list}"></vxe-table-column>
@@ -182,7 +182,7 @@ import headd from '@/components/head'
             update (row) {
               let insertRecords = this.$refs.xTable.getInsertRecords()
                  this.$http.get('/init/updatetask', {params: {data: row, year: this.year}}).then(response => {
-			this.$XModal.message({ message: '更新成功', status: 'success' })
+			this.$XModal.message({ message: '保存成功', status: 'success' })
                 })
             },
             	
@@ -203,7 +203,7 @@ import headd from '@/components/head'
                 let insertRecords = this.$refs.xTable.getInsertRecords()
 		console.log(insertRecords)
                  this.$http.get('/init/addtask', {params: {data: JSON.stringify(insertRecords), year: this.year}}).then(response => {
-			this.$XModal.message({ message: '保存成功', status: 'success' })
+			this.$XModal.message({ message: response.data.message, status: 'success' })
 			this.reload()
                 })
             }
