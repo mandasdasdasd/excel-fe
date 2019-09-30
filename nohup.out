@@ -1236,3 +1236,94 @@ qweqweqweqwe\r\n
 127.0.0.1 - - [29/Sep/2019 17:26:23] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
 127.0.0.1 - - [29/Sep/2019 17:26:53] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
 127.0.0.1 - - [29/Sep/2019 17:26:58] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [30/Sep/2019 09:28:48] "GET /init/gettask?pageSize=8&year=2019 HTTP/1.0" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 2463, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 2449, in wsgi_app
+    response = self.handle_exception(e)
+  File "/usr/local/lib64/python3.6/site-packages/flask_restful/__init__.py", line 269, in error_router
+    return original_handler(e)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1866, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib64/python3.6/site-packages/flask/_compat.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib64/python3.6/site-packages/flask_restful/__init__.py", line 269, in error_router
+    return original_handler(e)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib64/python3.6/site-packages/flask/_compat.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib64/python3.6/site-packages/flask_restful/__init__.py", line 458, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/local/lib64/python3.6/site-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib64/python3.6/site-packages/flask_restful/__init__.py", line 573, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/opt/excel-fe/task.py", line 84, in get
+    total_page = self.total_page(pagesize, userid, year)
+  File "/opt/excel-fe/task.py", line 74, in total_page
+    sql = '''select count(id) from task where userid = %d and year= %d''' % (int(userid), year)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'NoneType'
+127.0.0.1 - - [30/Sep/2019 09:28:50] "GET /init/login?user=admin&pwd=admin HTTP/1.0" 200 -
+127.0.0.1 - - [30/Sep/2019 09:28:50] "GET /init/gettask?pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [30/Sep/2019 09:30:28] "GET /init/gettask?pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [30/Sep/2019 09:30:30] "GET /init/getuser HTTP/1.0" 200 -
+127.0.0.1 - - [30/Sep/2019 09:30:31] "GET /init/gettask?pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [30/Sep/2019 09:30:42] "GET /init/gettask?page=2&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [30/Sep/2019 10:05:16] "GET /init/gettask?pageSize=8&year=2019 HTTP/1.0" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 2463, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 2449, in wsgi_app
+    response = self.handle_exception(e)
+  File "/usr/local/lib64/python3.6/site-packages/flask_restful/__init__.py", line 269, in error_router
+    return original_handler(e)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1866, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib64/python3.6/site-packages/flask/_compat.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib64/python3.6/site-packages/flask_restful/__init__.py", line 269, in error_router
+    return original_handler(e)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib64/python3.6/site-packages/flask/_compat.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib64/python3.6/site-packages/flask_restful/__init__.py", line 458, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/local/lib64/python3.6/site-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib64/python3.6/site-packages/flask_restful/__init__.py", line 573, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/opt/excel-fe/task.py", line 84, in get
+    total_page = self.total_page(pagesize, userid, year)
+  File "/opt/excel-fe/task.py", line 74, in total_page
+    sql = '''select count(id) from task where userid = %d and year= %d''' % (int(userid), year)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'NoneType'
+127.0.0.1 - - [30/Sep/2019 10:05:24] "GET /init/login?user=admin&pwd=admin HTTP/1.0" 200 -
+127.0.0.1 - - [30/Sep/2019 10:05:24] "GET /init/gettask?pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [30/Sep/2019 10:05:36] "GET /init/gettask?page=2&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [30/Sep/2019 10:05:43] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [30/Sep/2019 10:05:46] "GET /init/gettask?page=2&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [30/Sep/2019 10:57:48] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [30/Sep/2019 11:00:40] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [30/Sep/2019 11:04:01] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [30/Sep/2019 11:04:42] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [30/Sep/2019 11:06:19] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [30/Sep/2019 11:06:25] "GET /init/gettask?page=1&pageSize=8&year=2019 HTTP/1.0" 200 -

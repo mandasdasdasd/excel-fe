@@ -31,12 +31,12 @@
 
           <vxe-table-column field="id" width="40" title="id"></vxe-table-column>
           <vxe-table-column field="task" title="任务" :edit-render="{name: 'textarea'}"></vxe-table-column>
-          <vxe-table-column field="user" title="用户" sortable :edit-render="{name: 'input'}"></vxe-table-column>
-          <vxe-table-column field="priority" title="优先级" sortable :edit-render="{name: 'select',  options: priority_list}"></vxe-table-column>
-          <vxe-table-column field="status" title="状态" sortable :edit-render="{name: 'select', options: sex_list}"></vxe-table-column>
-          <vxe-table-column field="create_time" title="创建时间" sortable></vxe-table-column>
+          <vxe-table-column field="user" title="用户"  width="10%" sortable :edit-render="{name: 'input'}"></vxe-table-column>
+          <vxe-table-column field="priority" title="优先级" width="10%" sortable :edit-render="{name: 'select',  options: priority_list}"></vxe-table-column>
+          <vxe-table-column field="status" title="状态"  width="10%" sortable :edit-render="{name: 'select', options: sex_list}"></vxe-table-column>
+          <vxe-table-column field="create_time" title="创建时间"  width="15%" sortable></vxe-table-column>
 
-          <vxe-table-column title="操作" v-if="save">
+          <vxe-table-column title="操作" width="15%"  v-if="save">
             <template v-slot="{ row }">
               <template v-if="$refs.xTable.hasActiveRow(row)">
                 <vxe-button @click="saveRowEvent(row)">保存</vxe-button>
