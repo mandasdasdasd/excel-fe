@@ -34,7 +34,7 @@
           <vxe-table-column field="user" title="用户"  width="10%" sortable :edit-render="{name: 'input'}"></vxe-table-column>
           <vxe-table-column field="priority" title="优先级" width="10%" sortable :edit-render="{name: 'select',  options: priority_list}"></vxe-table-column>
           <vxe-table-column field="status" title="状态"  width="10%" sortable :edit-render="{name: 'select', options: sex_list}"></vxe-table-column>
-          <vxe-table-column field="create_time" title="创建时间"  width="15%" sortable></vxe-table-column>
+          <vxe-table-column field="create_time"  v-if="save" title="创建时间"  width="15%" sortable></vxe-table-column>
 
           <vxe-table-column title="操作" width="15%"  v-if="save">
             <template v-slot="{ row }">
@@ -47,16 +47,20 @@
               </template>
             </template>
           </vxe-table-column>
-            </vxe-table>
-          <vxe-pager
+          </vxe-table>
+
+
+ 	
+        <vxe-pager
           align="center"
-          :current-page.sync="page.currentPage"
-          :page-size.sync="page.pageSize"
-          :total="page.totalResult"
-          :layouts="['JumpNumber']"
-          @page-change="handlePageChange"
-          >
-        </vxe-pager>    
+          :current-page.sync="page2.currentPage"
+          :page-size.sync="page2.pageSize"
+          :total="page2.totalResult"
+	  :layouts="['Sizes', 'PrevPage', 'JumpNumber', 'NextPage']"
+	  @page-change="handlePageChange"
+		>
+        </vxe-pager>
+
 
         </div>
 </template>
@@ -69,11 +73,13 @@ import headd from '@/components/head'
             return {
 		xx: true,
                 role_sale: true,
-                page: {
-                    currentPage: sessionStorage.getItem('currentPage'),
-                    pageSize: 8,
-                    totalResult: 50
-                },
+
+          page2: {
+                currentPage: 1,
+                pageSize: 10,
+                totalResult: 200
+              },
+
                 tableData: [],
                 year: sessionStorage.getItem('year'),
                 years: [2018, 2019, 2020],
@@ -148,25 +154,25 @@ import headd from '@/components/head'
                             }
                          })
                     };
-		this.gettask(this.page.currentPage)
+		this.gettask(this.page2.currentPage)
             }, 
 
             handlePageChange () {
-		sessionStorage.setItem('currentPage', this.page.currentPage)
+		sessionStorage.setItem('currentPage', this.page2.currentPage)
                 this.init()
             },
 
 	    gettask (cpage) {
-                this.$http.get('/init/gettask', {params: { page: cpage, pageSize: this.page.pageSize, year: this.year}}).then(response => {
+                this.$http.get('/init/gettask', {params: { page: cpage, pageSize: this.page2.pageSize, year: this.year}}).then(response => {
                     this.tableData = response.data.data
-                    this.page.totalResult = response.data.total_page
+                    this.page2.totalResult = response.data.total_page
                 })
 		},
 
 	    gettaskbyyear (cyear) {
 		sessionStorage.setItem('year', cyear)
 		this.year = cyear
-		this.gettask(this.page.currentPage)
+		this.gettask(this.page2.currentPage)
 		},
 
             insertEvent (row, event) {
