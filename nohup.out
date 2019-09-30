@@ -1474,3 +1474,6 @@ select * from user where user ="admin" and pwd="admin" and status=1
 127.0.0.1 - - [30/Sep/2019 16:29:11] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
 127.0.0.1 - - [30/Sep/2019 16:32:59] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
 127.0.0.1 - - [30/Sep/2019 16:33:02] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [30/Sep/2019 16:35:54] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [30/Sep/2019 16:38:02] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [30/Sep/2019 16:38:13] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
