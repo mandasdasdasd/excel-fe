@@ -79,11 +79,11 @@ import headd from '@/components/head'
 		xx: true,
                 role_sale: true,
 
-          page2: {
-                currentPage: 1,
-                pageSize: 10,
-                totalResult: 200
-              },
+          	page2: {
+                	currentPage: 1,
+                	pageSize: 10,
+                	totalResult: 200
+              	},
 
                 tableData: [],
                 year: sessionStorage.getItem('year'),
@@ -162,7 +162,8 @@ import headd from '@/components/head'
                             }
                          })
                     };
-		this.gettask(this.page2.currentPage)
+		this.page2.currentPage = cpage
+		this.gettask(cpage)
             }, 
 
             handlePageChange () {
