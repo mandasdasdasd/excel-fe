@@ -61,7 +61,7 @@
           :current-page.sync="page2.currentPage"
           :page-size.sync="page2.pageSize"
           :total="page2.totalResult"
-	  :layouts="['Sizes', 'PrevPage', 'JumpNumber', 'NextPage']"
+	  :layouts="['Sizes', 'PrevPage', 'JumpNumber', 'NextPage', 'Total']"
 	  @page-change="handlePageChange"
 		>
         </vxe-pager>
