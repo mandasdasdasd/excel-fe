@@ -1477,3 +1477,477 @@ select * from user where user ="admin" and pwd="admin" and status=1
 127.0.0.1 - - [30/Sep/2019 16:35:54] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
 127.0.0.1 - - [30/Sep/2019 16:38:02] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
 127.0.0.1 - - [30/Sep/2019 16:38:13] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [30/Sep/2019 16:39:10] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [30/Sep/2019 16:50:38] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [30/Sep/2019 17:25:51] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [30/Sep/2019 17:27:34] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 09:22:04] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 2463, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 2449, in wsgi_app
+    response = self.handle_exception(e)
+  File "/usr/local/lib64/python3.6/site-packages/flask_restful/__init__.py", line 269, in error_router
+    return original_handler(e)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1866, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib64/python3.6/site-packages/flask/_compat.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib64/python3.6/site-packages/flask_restful/__init__.py", line 269, in error_router
+    return original_handler(e)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib64/python3.6/site-packages/flask/_compat.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib64/python3.6/site-packages/flask_restful/__init__.py", line 458, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/local/lib64/python3.6/site-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib64/python3.6/site-packages/flask_restful/__init__.py", line 573, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/opt/excel-fe/task.py", line 85, in get
+    total_page = self.total_page(pagesize, userid, year)
+  File "/opt/excel-fe/task.py", line 75, in total_page
+    sql = '''select count(id) from task where userid = %d and year= %d''' % (int(userid), year)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'NoneType'
+127.0.0.1 - - [08/Oct/2019 09:22:26] "GET /init/login?user=admin&pwd=admin HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 09:22:26] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 09:22:37] "GET /init/gettask?page=2&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 09:22:40] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 11:15:57] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 2463, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 2449, in wsgi_app
+    response = self.handle_exception(e)
+  File "/usr/local/lib64/python3.6/site-packages/flask_restful/__init__.py", line 269, in error_router
+    return original_handler(e)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1866, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib64/python3.6/site-packages/flask/_compat.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib64/python3.6/site-packages/flask_restful/__init__.py", line 269, in error_router
+    return original_handler(e)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib64/python3.6/site-packages/flask/_compat.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib64/python3.6/site-packages/flask_restful/__init__.py", line 458, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/local/lib64/python3.6/site-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib64/python3.6/site-packages/flask_restful/__init__.py", line 573, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/opt/excel-fe/task.py", line 85, in get
+    total_page = self.total_page(pagesize, userid, year)
+  File "/opt/excel-fe/task.py", line 75, in total_page
+    sql = '''select count(id) from task where userid = %d and year= %d''' % (int(userid), year)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'NoneType'
+127.0.0.1 - - [08/Oct/2019 11:15:58] "GET /init/login?user=admin&pwd=admin HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 11:15:58] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 11:17:00] "GET /init/gettask?page=2&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 11:17:02] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 11:17:04] "GET /init/gettask?page=2&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 11:17:06] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 11:17:10] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 11:17:10] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 11:22:02] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 11:22:07] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 11:22:09] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 11:22:11] "GET /init/gettask?page=1&pageSize=10&year=2018 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 11:22:12] "GET /init/gettask?page=1&pageSize=10&year=2018 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 11:23:06] "GET /init/gettask?page=1&pageSize=10&year=2018 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 11:23:09] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 13:29:59] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 13:30:33] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 13:32:01] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 13:32:09] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 13:33:54] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 13:34:00] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 13:34:23] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 13:44:24] "GET /init/gettask?page=1&pageSize=100&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 13:44:27] "GET /init/gettask?page=1&pageSize=50&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 13:44:29] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 13:48:33] "GET /init/gettask?page=2&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 13:48:37] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 13:48:38] "GET /init/gettask?page=1&pageSize=15&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 13:49:00] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 13:53:31] "GET /init/gettask?page=2&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 13:53:33] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 13:54:43] "GET /init/updatetask?data=%7B%22id%22:17,%22task%22:%22课题三+机器外网测试，外挂曙光存储（经常掉，+经常需要维护升级），+倒数据%22,%22user%22:%22林老师%22,%22create_time%22:%222019-09-26+14:38:26%22,%22status%22:%220%22,%22priority%22:%221%22,%22_XID%22:%22row_16%22%7D&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 13:54:46] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 13:56:31] "GET /init/updatetask?data=%7B%22id%22:15,%22task%22:%22gscloud+下载日志统计+fix,+访问下载日志需要分开上传，合并上传统计会有问题，之前上传过的再次上传不会解析，+之前丢失的日志重新整理上传，+crontab+，+脚本每天定时上传。%22,%22user%22:%22林老师%22,%22create_time%22:%222019-09-26+13:47:46%22,%22status%22:%221%22,%22priority%22:%221%22,%22_XID%22:%22row_7%22%7D&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 13:57:24] "GET /init/updatetask?data=%7B%22id%22:4,%22task%22:%224个老项目迁移(涉及的服务：+mongo，+postgres，+apache，+tomcat)+：微生物模型云服务++近视基因组数据库++基因组可视化应用+微生物领域云+++还差微生物模型%22,%22user%22:%22孟老师%22,%22create_time%22:%222019-09-23+11:12:30%22,%22status%22:%220%22,%22priority%22:%221%22,%22_XID%22:%22row_10%22%7D&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 13:57:26] "GET /init/gettask?page=2&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 14:01:22] "GET /init/gettask?page=2&pageSize=15&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 14:01:23] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 14:01:31] "GET /init/gettask?page=1&pageSize=15&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 14:04:41] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 14:04:45] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 14:06:06] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 14:08:21] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 14:08:40] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 14:35:30] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 14:35:31] "GET /init/gettask?page=1&pageSize=10&year=2018 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 14:35:32] "GET /init/getuser HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 14:35:33] "GET /init/gettask?page=1&pageSize=10&year=2018 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 14:35:34] "GET /init/getuser HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 14:35:35] "GET /init/gettask?page=1&pageSize=10&year=2018 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 14:35:41] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 14:35:43] "GET /init/gettask?page=1&pageSize=10&year=2020 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 14:35:44] "GET /init/getuser HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 14:35:45] "GET /init/gettask?page=1&pageSize=10&year=2020 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 14:35:46] "GET /init/getuser HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 14:35:48] "GET /init/gettask?page=1&pageSize=10&year=2020 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 14:35:51] "GET /init/gettask?page=1&pageSize=10&year=2020 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 14:35:54] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 14:35:55] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 14:35:58] "GET /init/getuser HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 14:36:00] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 14:36:01] "GET /init/gettask?page=1&pageSize=10&year=2020 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 14:36:03] "GET /init/getuser HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 14:36:04] "GET /init/gettask?page=1&pageSize=10&year=2020 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 14:36:05] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 14:40:52] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 14:41:31] "GET /init/login?user=admin&pwd=admin HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 14:41:31] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 14:41:39] "GET /init/gettask?page=1&pageSize=15&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 14:54:55] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 14:55:26] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 15:06:57] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 15:07:49] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 15:11:07] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 15:13:39] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 15:14:30] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 15:15:02] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 15:15:52] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 15:15:59] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 15:21:19] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 15:21:43] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 15:26:22] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 15:27:44] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 15:28:46] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 15:37:46] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 15:38:08] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 15:38:45] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 15:39:30] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 15:40:52] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 15:41:02] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 15:46:19] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 15:46:33] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 15:47:32] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 15:50:49] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 15:51:33] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 15:52:36] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 16:09:12] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 16:09:28] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 16:15:06] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 16:15:59] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 16:19:52] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [08/Oct/2019 16:22:08] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 14:43:39] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 2463, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 2449, in wsgi_app
+    response = self.handle_exception(e)
+  File "/usr/local/lib64/python3.6/site-packages/flask_restful/__init__.py", line 269, in error_router
+    return original_handler(e)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1866, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib64/python3.6/site-packages/flask/_compat.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib64/python3.6/site-packages/flask_restful/__init__.py", line 269, in error_router
+    return original_handler(e)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib64/python3.6/site-packages/flask/_compat.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib64/python3.6/site-packages/flask_restful/__init__.py", line 458, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/local/lib64/python3.6/site-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib64/python3.6/site-packages/flask_restful/__init__.py", line 573, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/opt/excel-fe/task.py", line 85, in get
+    total_page = self.total_page(pagesize, userid, year)
+  File "/opt/excel-fe/task.py", line 75, in total_page
+    sql = '''select count(id) from task where userid = %d and year= %d''' % (int(userid), year)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'NoneType'
+127.0.0.1 - - [09/Oct/2019 14:43:40] "GET /init/login?user=admin&pwd=admin HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 14:43:40] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 14:43:43] "GET /init/gettask?page=2&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 14:43:45] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 14:45:03] "GET /init/addtask?data=[%7B%22status%22:%221%22,%22priority%22:%221%22,%22task%22:null,%22user%22:null,%22create_time%22:null,%22_XID%22:%22row_22%22%7D]&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 14:45:03] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 14:45:06] "GET /init/gettask?page=2&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 14:45:08] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 14:45:10] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 14:45:14] "GET /init/addtask?data=[%7B%22status%22:%220%22,%22priority%22:%221%22,%22task%22:null,%22user%22:null,%22create_time%22:null,%22_XID%22:%22row_11%22%7D]&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 14:45:14] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 14:45:16] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 14:45:23] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+ * Serving Flask app "route" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 257-857-584
+127.0.0.1 - - [09/Oct/2019 15:49:29] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 15:49:33] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 15:49:37] "GET /init/updatetask?data=%7B%22id%22:162,%22task%22:%22网上购买服务器背板（r720xd）更换；+机器：BO2+32U%22,%22user%22:%22ysman1%22,%22create_time%22:%222019-10-09+15:29:22%22,%22status%22:%220%22,%22priority%22:%222%22,%22_XID%22:%22row_1%22%7D&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 15:49:38] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 15:49:42] "GET /init/updatetask?data=%7B%22id%22:162,%22task%22:%22网上购买服务器背板（r720xd）更换；+机器：BO2+32U%22,%22user%22:%22ysman%22,%22create_time%22:%222019-10-09+15:29:22%22,%22status%22:%220%22,%22priority%22:%222%22,%22_XID%22:%22row_1%22%7D&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 15:49:44] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 15:52:11] "GET /init/addtask?data=[%7B%22status%22:%220%22,%22priority%22:%221%22,%22task%22:%22test%22,%22user%22:null,%22create_time%22:null,%22_XID%22:%22row_11%22%7D]&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 15:52:11] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 15:52:14] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 15:52:21] "GET /init/addtask?data=[%7B%22status%22:%220%22,%22priority%22:%221%22,%22task%22:%22tt%22,%22user%22:null,%22create_time%22:null,%22_XID%22:%22row_11%22%7D]&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 15:52:21] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 15:53:35] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 15:53:39] "GET /init/addtask?data=[%7B%22status%22:%220%22,%22priority%22:%221%22,%22task%22:%221%22,%22user%22:null,%22create_time%22:null,%22_XID%22:%22row_11%22%7D]&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 15:53:43] "GET /init/addtask?data=[%7B%22status%22:%220%22,%22priority%22:%221%22,%22task%22:%222%22,%22user%22:null,%22_XID%22:%22row_12%22%7D,%7B%22status%22:%220%22,%22priority%22:%221%22,%22task%22:%221%22,%22user%22:null,%22create_time%22:null,%22_XID%22:%22row_11%22%7D]&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 15:53:46] "GET /init/addtask?data=[%7B%22status%22:%220%22,%22priority%22:%221%22,%22task%22:%223%22,%22user%22:null,%22_XID%22:%22row_13%22%7D,%7B%22status%22:%220%22,%22priority%22:%221%22,%22task%22:%222%22,%22user%22:null,%22_XID%22:%22row_12%22%7D,%7B%22status%22:%220%22,%22priority%22:%221%22,%22task%22:%221%22,%22user%22:null,%22create_time%22:null,%22_XID%22:%22row_11%22%7D]&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 15:53:48] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 15:54:36] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 15:54:39] "GET /init/addtask?data=[%7B%22status%22:%220%22,%22priority%22:%221%22,%22task%22:%22a%22,%22user%22:null,%22create_time%22:null,%22_XID%22:%22row_11%22%7D]&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 15:54:42] "GET /init/addtask?data=[%7B%22status%22:%220%22,%22priority%22:%221%22,%22task%22:%22b%22,%22user%22:null,%22_XID%22:%22row_12%22%7D,%7B%22status%22:%220%22,%22priority%22:%221%22,%22task%22:%22a%22,%22user%22:null,%22create_time%22:null,%22_XID%22:%22row_11%22%7D]&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 15:54:44] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 15:59:33] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 15:59:36] "GET /init/addtask?data=[%7B%22status%22:%220%22,%22priority%22:%221%22,%22task%22:%221%22,%22user%22:null,%22create_time%22:null,%22_XID%22:%22row_11%22%7D]&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 15:59:38] "GET /init/addtask?data=[%7B%22status%22:%220%22,%22priority%22:%221%22,%22task%22:%222%22,%22user%22:null,%22_XID%22:%22row_12%22%7D,%7B%22status%22:%220%22,%22priority%22:%221%22,%22task%22:%221%22,%22user%22:null,%22create_time%22:null,%22_XID%22:%22row_11%22%7D]&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 15:59:40] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:04:07] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:04:11] "GET /init/addtask?data=[%7B%22status%22:%220%22,%22priority%22:%221%22,%22task%22:%22a%22,%22user%22:null,%22create_time%22:null,%22_XID%22:%22row_11%22%7D]&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:04:14] "GET /init/addtask?data=[%7B%22status%22:%220%22,%22priority%22:%221%22,%22task%22:%22b%22,%22user%22:null,%22_XID%22:%22row_12%22%7D,%7B%22status%22:%220%22,%22priority%22:%221%22,%22task%22:%22a%22,%22user%22:null,%22create_time%22:null,%22_XID%22:%22row_11%22%7D]&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:04:16] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:07:05] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:07:12] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:09:36] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:09:39] "GET /init/addtask?data=[]&year=2019 HTTP/1.0" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 2463, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 2449, in wsgi_app
+    response = self.handle_exception(e)
+  File "/usr/local/lib64/python3.6/site-packages/flask_restful/__init__.py", line 269, in error_router
+    return original_handler(e)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1866, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib64/python3.6/site-packages/flask/_compat.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib64/python3.6/site-packages/flask_restful/__init__.py", line 269, in error_router
+    return original_handler(e)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib64/python3.6/site-packages/flask/_compat.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib64/python3.6/site-packages/flask_restful/__init__.py", line 458, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/local/lib64/python3.6/site-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib64/python3.6/site-packages/flask_restful/__init__.py", line 573, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/opt/excel-fe/task.py", line 53, in get
+    if not sdata[0]["task"]:
+IndexError: list index out of range
+127.0.0.1 - - [09/Oct/2019 16:10:24] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:10:40] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:11:18] "GET /init/addtask?data=[%7B%22status%22:%220%22,%22priority%22:%221%22,%22task%22:%229.10号+社科院近代史研究所送书%22,%22user%22:%22ysman%22,%22create_time%22:null,%22_XID%22:%22row_11%22%7D]&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:11:18] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:11:23] "GET /init/updatetask?data=%7B%22id%22:180,%22task%22:%229.10号+社科院近代史研究所送书%22,%22user%22:%22ysman%22,%22create_time%22:%222019-10-09+16:11:18%22,%22status%22:%221%22,%22priority%22:%221%22,%22_XID%22:%22row_12%22%7D&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:11:56] "GET /init/addtask?data=[%7B%22status%22:%220%22,%22priority%22:%221%22,%22task%22:%22服务器买背板邮寄怀柔更换%22,%22user%22:%22ysman%22,%22create_time%22:null,%22_XID%22:%22row_22%22%7D]&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:11:56] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:12:07] "GET /init/updatetask?data=%7B%22id%22:180,%22task%22:%229.10号+社科院近代史研究所送书%22,%22user%22:%22林老师%22,%22create_time%22:%222019-10-09+16:11:18%22,%22status%22:%221%22,%22priority%22:%221%22,%22_XID%22:%22row_24%22%7D&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:12:22] "GET /init/updatetask?data=%7B%22id%22:181,%22task%22:%22服务器买背板邮寄怀柔更换%22,%22user%22:%22ysman%22,%22create_time%22:%222019-10-09+16:11:56%22,%22status%22:%220%22,%22priority%22:%222%22,%22_XID%22:%22row_23%22%7D&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:12:24] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:13:30] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:13:32] "GET /init/gettask?page=1&pageSize=10&year=2018 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:13:34] "GET /init/gettask?page=1&pageSize=10&year=2020 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:13:35] "GET /init/gettask?page=1&pageSize=10&year=2018 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:13:36] "GET /init/gettask?page=1&pageSize=10&year=2018 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:13:38] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:14:46] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:17:08] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:17:12] "GET /init/gettask?page=2&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:17:13] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:17:15] "GET /init/gettask?page=2&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:17:16] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:17:19] "GET /init/gettask?page=2&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:17:20] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:24:58] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:24:59] "GET /init/gettask?page=2&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:25:01] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:26:12] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:26:16] "GET /init/gettask?page=2&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:26:20] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:26:28] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:27:37] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:27:40] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:27:43] "GET /init/gettask?page=2&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:27:47] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:28:31] "GET /init/gettask?page=2&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:28:39] "GET /init/gettask?page=2&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:28:42] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:28:45] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:28:50] "GET /init/gettask?page=2&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:28:53] "GET /init/gettask?page=2&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:28:56] "GET /init/gettask?page=2&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:28:59] "GET /init/gettask?page=2&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:31:17] "GET /init/gettask?page=2&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:31:20] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:31:22] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:31:25] "GET /init/gettask?page=2&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:31:29] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:31:31] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:31:33] "GET /init/gettask?page=2&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:31:36] "GET /init/gettask?page=2&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:31:50] "GET /init/gettask?page=2&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:31:52] "GET /init/gettask?page=2&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:32:44] "GET /init/gettask?page=2&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:34:28] "GET /init/gettask?page=2&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:34:30] "GET /init/gettask?page=2&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:34:31] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:34:32] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:34:34] "GET /init/gettask?page=2&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:34:36] "GET /init/gettask?page=2&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:34:37] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:34:39] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:34:40] "GET /init/gettask?page=2&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:34:41] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:34:42] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:34:43] "GET /init/gettask?page=2&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:34:44] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:34:45] "GET /init/gettask?page=2&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:34:46] "GET /init/gettask?page=2&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:34:48] "GET /init/gettask?page=2&pageSize=10&year=2018 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:34:49] "GET /init/gettask?page=2&pageSize=10&year=2018 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:34:51] "GET /init/gettask?page=1&pageSize=10&year=2018 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:34:53] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:34:54] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:35:06] "GET /init/gettask?page=2&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:35:15] "GET /init/gettask?page=2&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:35:18] "GET /init/gettask?page=2&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:35:20] "GET /init/gettask?page=2&pageSize=10&year=2018 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:35:23] "GET /init/gettask?page=2&pageSize=10&year=2020 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:35:27] "GET /init/gettask?page=2&pageSize=10&year=2018 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:35:28] "GET /init/gettask?page=2&pageSize=10&year=2018 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:35:32] "GET /init/gettask?page=2&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:35:33] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:39:19] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:39:44] "GET /init/updatetask?data=%7B%22id%22:180,%22task%22:%229.10号-社科院近代史研究所送书%22,%22user%22:%22林老师%22,%22create_time%22:%222019-10-09+16:11:18%22,%22status%22:%221%22,%22priority%22:%221%22,%22_XID%22:%22row_2%22%7D&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:39:46] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:44:47] "GET /init/login?user=admin&pwd=admin HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:44:47] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:54:19] "GET /init/login?user=admin&pwd=admin HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:54:19] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:54:22] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:55:40] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:58:05] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:58:08] "GET /init/gettask?page=2&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:58:09] "GET /init/gettask?page=2&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:58:12] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:58:14] "GET /init/gettask?page=1&pageSize=15&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:58:15] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [09/Oct/2019 16:58:17] "GET /init/gettask?page=1&pageSize=15&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2019 08:41:37] "GET /init/gettask?pageSize=10&year=2019 HTTP/1.0" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 2463, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 2449, in wsgi_app
+    response = self.handle_exception(e)
+  File "/usr/local/lib64/python3.6/site-packages/flask_restful/__init__.py", line 269, in error_router
+    return original_handler(e)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1866, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib64/python3.6/site-packages/flask/_compat.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib64/python3.6/site-packages/flask_restful/__init__.py", line 269, in error_router
+    return original_handler(e)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib64/python3.6/site-packages/flask/_compat.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib64/python3.6/site-packages/flask_restful/__init__.py", line 458, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/local/lib64/python3.6/site-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib64/python3.6/site-packages/flask_restful/__init__.py", line 573, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/opt/excel-fe/task.py", line 85, in get
+    total_page = self.total_page(pagesize, userid, year)
+  File "/opt/excel-fe/task.py", line 75, in total_page
+    sql = '''select count(id) from task where userid = %d and year= %d''' % (int(userid), year)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'NoneType'
+127.0.0.1 - - [10/Oct/2019 08:41:40] "GET /init/login?user=admin&pwd=admin HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2019 08:41:40] "GET /init/gettask?pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2019 08:41:53] "GET /init/gettask?page=2&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2019 08:41:54] "GET /init/gettask?page=2&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2019 08:41:55] "GET /init/gettask?page=2&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2019 08:41:56] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2019 08:41:56] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2019 08:41:58] "GET /init/gettask?page=2&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2019 08:42:00] "GET /init/gettask?page=2&pageSize=10&year=2018 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2019 08:42:02] "GET /init/gettask?page=2&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2019 08:42:05] "GET /init/gettask?page=2&pageSize=10&year=2020 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2019 08:42:06] "GET /init/gettask?page=2&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2019 08:42:07] "GET /init/gettask?page=2&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2019 08:42:08] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2019 09:04:03] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2019 09:08:26] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2019 09:08:31] "GET /init/login?user=admin&pwd=admin HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2019 09:08:31] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2019 09:08:32] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2019 09:08:40] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2019 09:10:27] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2019 09:10:33] "GET /init/login?user=admin&pwd=admin HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2019 09:10:33] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2019 09:10:36] "GET /init/gettask?page=1&pageSize=10&year=2018 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2019 09:10:37] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2019 09:10:38] "GET /init/gettask?page=1&pageSize=10&year=2020 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2019 09:10:41] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2019 09:10:43] "GET /init/gettask?page=2&pageSize=10&year=2019 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2019 09:10:45] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
