@@ -25,6 +25,7 @@
           :row-class-name="rowClassName"
           :data="tableData"
           :edit-render={}
+	  highlight-hover-row
 
           @cell-dblclick='insertevent'
           :edit-config="{trigger: 'click', mode: 'row'}">
@@ -81,7 +82,7 @@ import headd from '@/components/head'
 
           	page2: {
                 	currentPage: 1,
-                	pageSize: 10,
+                	pageSize: 12,
                 	totalResult: 200
               	},
 
@@ -146,8 +147,9 @@ import headd from '@/components/head'
             init () {
 		const cpage = sessionStorage.getItem('currentPage')
             	if (cpage === "null") {
-                	this.page.currentPage=1
+                	this.page2.currentPage=1
                 	} else {
+			this.page2.currentPage= cpage
                 	};
                 const role = this.$cookies.get("role")
                 if (role === "11") {
@@ -162,8 +164,7 @@ import headd from '@/components/head'
                             }
                          })
                     };
-		this.page2.currentPage = cpage
-		this.gettask(cpage)
+		this.gettask(this.page2.currentPage)
             }, 
 
             handlePageChange () {
