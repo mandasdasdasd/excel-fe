@@ -5,6 +5,7 @@ import pymysql
 import json
 
 import MySQLdb
+from utils import Encryption
 
 
 class Login(Resource):
@@ -22,8 +23,10 @@ class Login(Resource):
         user = self.args["user"]
         pwd = self.args["pwd"]
 
-        sql = '''select * from user where user ="%s" and pwd="%s" and status=1 ''' % (user, pwd)
-        print(sql)
+        encryption_obj = Encryption()
+        encrptstr= encryption_obj.hmac_md5(pwd)
+
+        sql = '''select * from user where user ="%s" and pwd="%s" and status=1''' % (user, encrptstr)
         self.cursor.execute(sql)
         res = self.cursor.fetchall()
         if res:
