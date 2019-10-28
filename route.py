@@ -6,7 +6,7 @@ import json
 import MySQLdb
 
 from user import Login, UserAdd, User
-from task import AddTask, GetTask, UpdateTask
+from task import AddTask, GetTask, UpdateTask, DeleTask
 
 
 db = pymysql.connect("127.0.0.1","mysql","mysql","ysman" )
@@ -190,6 +190,7 @@ api.add_resource(User, '/init/getuser')
 api.add_resource(AddTask, '/init/addtask')
 api.add_resource(GetTask, '/init/gettask')
 api.add_resource(UpdateTask, '/init/updatetask')
+api.add_resource(DeleTask, '/init/deletetask')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host="0.0.0.0")

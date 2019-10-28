@@ -34,6 +34,32 @@ class UpdateTask(Resource):
         return {"data": data, "message": "成功"}
 
 
+class DeleTask(Resource):
+    def __init__(self):
+        self.db = pymysql.connect("127.0.0.1","mysql","mysql","ysman" )
+        self.cursor =self.db. cursor()
+        self.get_args = reqparse.RequestParser()
+        self.get_args.add_argument("taskid",  type=int)
+        self.get_args.add_argument("year",  type=int)
+        self.args = self.get_args.parse_args()
+
+    def get(self):
+        taskid = self.args["taskid"]
+        year = self.args["year"]
+
+        obj = GetTask()
+        data  = obj.get(year)
+        print(taskid)
+        if not taskid:
+            return {"data": data["data"], "message": "请规范操作"}
+
+        sql = '''update task set delete_status= 0 where id = %d ''' % taskid 
+        print(sql)
+        self.cursor.execute(sql)
+        self.db.commit()
+        return {"data": data, "message": "成功"}
+
+
 class AddTask(Resource):
     def __init__(self):
         self.db = pymysql.connect("127.0.0.1","mysql","mysql","ysman" )
@@ -51,7 +77,6 @@ class AddTask(Resource):
         obj = GetTask()
         data  = obj.get(year)
         if not sdata[0]["task"]:
-            print(1111)
             return {"data": data["data"], "message": "您还没有输入数据"}
 
         for one in sdata:
@@ -85,7 +110,7 @@ class GetTask(Resource):
         total_page = self.total_page(pagesize, userid, year)
 
         start_page = (page-1) * pagesize
-        sql = '''select * from task where year = %d and userid = %d order by create_time desc limit %d, %d''' % (year, int(userid), start_page, pagesize)
+        sql = '''select * from task where delete_status=1 and  year = %d and userid = %d order by create_time desc limit %d, %d''' % (year, int(userid), start_page, pagesize)
         self.cursor.execute(sql)
         res = self.cursor.fetchall()
         ll = []

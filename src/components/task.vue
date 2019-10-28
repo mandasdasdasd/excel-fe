@@ -51,6 +51,9 @@
               <template v-else>
                 <vxe-button @click="editRowEvent(row)">编辑</vxe-button>
               </template>
+				<template>
+                	<vxe-button @click="deleteRowEvent(row)">删除</vxe-button>
+				</template>
             </template>
           </vxe-table-column>
           </vxe-table>
@@ -132,6 +135,14 @@ import headd from '@/components/head'
         methods: {
 	    filterAgeMethod ({ option, row }) {
               return row.user === option.data
+            },
+            deleteRowEvent (row) {
+                this.$http.get('/init/deletetask', {params: { taskid: row.id, year: this.year}}).then(response => {
+                    //this.tableData = response.data.data
+                    //this.page2.totalResult = response.data.total_page
+					this.$XModal.message({ message: response.data.message, status: 'success' })
+					this.reload()
+            })
             },
             editRowEvent (row) {
 		this.xx=false

@@ -1951,3 +1951,48 @@ TypeError: int() argument must be a string, a bytes-like object or a number, not
 127.0.0.1 - - [10/Oct/2019 09:10:41] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
 127.0.0.1 - - [10/Oct/2019 09:10:43] "GET /init/gettask?page=2&pageSize=10&year=2019 HTTP/1.0" 200 -
 127.0.0.1 - - [10/Oct/2019 09:10:45] "GET /init/gettask?page=1&pageSize=10&year=2019 HTTP/1.0" 200 -
+ * Serving Flask app "route" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 257-857-584
+ * Serving Flask app "route" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 257-857-584
+10.0.86.154 - - [28/Oct/2019 09:32:28] "GET /init/login?user=admin&pwd=admin HTTP/1.0" 200 -
+10.0.86.154 - - [28/Oct/2019 09:32:31] "GET /init/login?user=admin&pwd=admin HTTP/1.0" 200 -
+10.0.86.154 - - [28/Oct/2019 09:32:39] "GET /init/login?user=admin&pwd=bigdata HTTP/1.0" 200 -
+10.0.86.154 - - [28/Oct/2019 09:32:39] "GET /init/gettask?pageSize=12&year=2019 HTTP/1.0" 200 -
+10.0.86.154 - - [28/Oct/2019 11:06:43] "GET /init/updatetask?data=%7B%22id%22:189,%22task%22:%2220台左右服务器换硬盘（10T）+重做raid，100块10T硬盘+剩余12块，+重做mfs%22,%22user%22:%22其他%22,%22create_time%22:%222019-10-23+09:56:05%22,%22status%22:%221%22,%22priority%22:%221%22,%22_XID%22:%22row_2%22%7D&year=2019 HTTP/1.0" 200 -
+10.0.86.154 - - [28/Oct/2019 15:28:34] "GET /init/gettask?pageSize=12&year=2019 HTTP/1.0" 200 -
+10.0.86.154 - - [28/Oct/2019 15:34:45] "GET /init/gettask?pageSize=12&year=2019 HTTP/1.0" 200 -
+10.0.86.154 - - [28/Oct/2019 15:35:19] "GET /init/gettask?pageSize=12&year=2019 HTTP/1.0" 200 -
+10.0.86.154 - - [28/Oct/2019 15:35:49] "GET /init/gettask?pageSize=12&year=2019 HTTP/1.0" 200 -
+ * Detected change in '/opt/excel-fe/task.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "/opt/excel-fe/route.py", line 9, in <module>
+    from task import AddTask, GetTask, UpdateTask
+  File "/opt/excel-fe/task.py", line 47
+    taskid = self.args["id"])
+                            ^
+SyntaxError: invalid syntax
+ * Serving Flask app "route" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 257-857-584
