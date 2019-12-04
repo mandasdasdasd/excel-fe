@@ -33,6 +33,8 @@
           <vxe-table-column width="50" type="index" title="序号"></vxe-table-column>
           <vxe-table-column field="task" title="任务" :edit-render="{name: 'textarea'}">
 		</vxe-table-column>
+          <vxe-table-column field="latest_progress" title="进展"  width="15%"  :edit-render="{name: 'textarea'}">
+		</vxe-table-column>
           <vxe-table-column field="user"  :filters="[{ data: '' }]" :filter-method="filterAgeMethod" title="用户"  width="10%" sortable :edit-render="{name: 'input'}">
 		 <template v-slot:filter="{ column, context }">
               <input type="type" v-for="(option, index) in column.filters" :key="index" v-model="option.data" @input="context.changeOption($event, !!option.data, option)">
@@ -40,7 +42,7 @@
 	</vxe-table-column>
           <vxe-table-column field="priority" :filters="[{label: '高', value: '2'}, {label: '中', value: '1'}, {label: '低', value: '0'}]" title="优先级" width="10%" sortable :edit-render="{name: 'select',  options: priority_list}"></vxe-table-column>
           <vxe-table-column field="status" :filters="[{label: '已完成', value: '1'}, {label: '进行中', value: '0'}]" title="状态"  width="10%" sortable :edit-render="{name: 'select', options: sex_list}"></vxe-table-column>
-          <vxe-table-column field="create_time"  v-if="save" title="创建时间"  width="15%" sortable></vxe-table-column>
+          <vxe-table-column field="create_time"  v-if="save" title="创建时间"  width="10%" sortable></vxe-table-column>
 
           <vxe-table-column title="操作" width="15%"  v-if="save">
             <template v-slot="{ row }">
@@ -51,7 +53,7 @@
               <template v-else>
                 <vxe-button @click="editRowEvent(row)">编辑</vxe-button>
               </template>
-				<template>
+				<template v-if="xx" >
                 	<vxe-button @click="deleteRowEvent(row)">删除</vxe-button>
 				</template>
             </template>

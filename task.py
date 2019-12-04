@@ -28,7 +28,7 @@ class UpdateTask(Resource):
         obj = GetTask()
         data  = obj.get(year)
 
-        sql = '''update task set task='%s', user='%s', status='%s', priority=%d where id =%d ''' % (sdata["task"], sdata["user"], int(sdata["status"]), int(sdata["priority"]), int(sdata["id"]))
+        sql = '''update task set task='%s', user='%s', status='%s', latest_progress='%s', priority=%d where id =%d ''' % (sdata["task"], sdata["user"], int(sdata["status"]),sdata["latest_progress"], int(sdata["priority"]), int(sdata["id"]))
         self.cursor.execute(sql)
         self.db.commit()
         return {"data": data, "message": "成功"}
@@ -57,7 +57,7 @@ class DeleTask(Resource):
         print(sql)
         self.cursor.execute(sql)
         self.db.commit()
-        return {"data": data, "message": "成功"}
+        return {"data": data, "message": "删除成功"}
 
 
 class AddTask(Resource):
@@ -75,12 +75,13 @@ class AddTask(Resource):
         userid = request.cookies.get('userid')
 
         obj = GetTask()
+        print(sdata)
         data  = obj.get(year)
         if not sdata[0]["task"]:
             return {"data": data["data"], "message": "您还没有输入数据"}
 
         for one in sdata:
-            sql = '''insert into task (task, user, status, year, userid, priority) values ('%s', '%s', %d, %d, %d, %d)''' % (one["task"], one["user"] if one["user"] else "其他", int(one["status"]), year, int(userid), int(one["priority"]))
+            sql = '''insert into task (task, user, status, year, userid, priority, latest_progress) values ('%s', '%s', %d, %d, %d, %d, '%s')''' % (one["task"], one["user"] if one["user"] else "其他", int(one["status"]), year, int(userid), int(one["priority"]), one["latest_progress"])
             self.cursor.execute(sql)
             self.db.commit()
         return {"data": data, "message": "成功"}
@@ -97,7 +98,7 @@ class GetTask(Resource):
         self.args = self.get_args.parse_args()
 
     def total_page(self, offset, userid, year):
-        sql = '''select count(id) from task where userid = %d and year= %d''' % (int(userid), year)
+        sql = '''select count(id) from task where userid = %d and delete_status=1 and year= %d''' % (int(userid), year)
         self.cursor.execute(sql)
         number = self.cursor.fetchone()
         return number[0]
@@ -125,6 +126,7 @@ class GetTask(Resource):
             dd["create_time"] = str(one[3])
             dd["status"] = str(one[4])
             dd["priority"] = str(one[7])
+            dd["latest_progress"] = one[9] if one[9] else ""
             ll.append(dd)
         res = {}
         res["data"] = ll
